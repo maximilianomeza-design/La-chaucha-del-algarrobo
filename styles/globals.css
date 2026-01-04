@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globales */
+body {
+  @apply bg-[#F8F6F2] text-[#1C1C1C] font-sans;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif text-[#3E2C22];
+}
+
+a {
+  @apply transition-colors duration-200;
+}

@@ -4,13 +4,12 @@ import { useState } from "react";
 
 export default function SillaAureliaTapizada() {
   const galeria = [
-    "/assets/catalogo/sillas/tapizadas/silla-aurelia-tapizada.webp",
     "/assets/catalogo/sillas/tapizadas/silla-aurelia-tapizado-bcoynegro.webp",
     "/assets/catalogo/sillas/tapizadas/silla-aurelia-tapizado-bcoynegro2.webp",
     "/assets/catalogo/sillas/tapizadas/silla-aurelia-tapizado-bordo.webp",
   ];
 
-  const video = "/assets/catalogo/sillas/tapizadas/silla-aurelia-tapizada2.mp4";
+  const video = "/assets/catalogo/sillas/tapizadas/silla aurelia tapizada2.mp4";
 
   const [indice, setIndice] = useState(0);
 
@@ -20,12 +19,12 @@ export default function SillaAureliaTapizada() {
 
   return (
     <main className="bg-[#F8F6F2] min-h-screen text-[#3E2C22]">
-      {/* HERO */}
+      {/* HERO - una sola imagen destacada */}
       <section className="relative">
         <img
-          src={galeria[indice]}
+          src="/assets/catalogo/sillas/tapizadas/silla-aurelia-tapizada.webp"
           alt="Silla Aurelia tapizada de algarrobo"
-          className="w-full h-[80vh] object-cover transition-all duration-500"
+          className="w-full h-[85vh] object-cover"
         />
         <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white text-center px-6">
           <h1 className="text-5xl font-serif mb-4 drop-shadow-lg">
@@ -36,24 +35,11 @@ export default function SillaAureliaTapizada() {
             Su tapizado artesanal brinda confort y estilo, ideal para comedores modernos.
           </p>
         </div>
-
-        {/* Controles del carrusel */}
-        <button
-          onClick={anterior}
-          className="absolute left-5 top-1/2 transform -translate-y-1/2 bg-white/60 hover:bg-white text-[#3E2C22] p-3 rounded-full shadow-md transition"
-        >
-          ‹
-        </button>
-        <button
-          onClick={siguiente}
-          className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-white/60 hover:bg-white text-[#3E2C22] p-3 rounded-full shadow-md transition"
-        >
-          ›
-        </button>
       </section>
 
-      {/* DESCRIPCIÓN */}
+      {/* DESCRIPCIÓN + GALERÍA */}
       <section className="max-w-6xl mx-auto py-24 px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        {/* Texto descriptivo */}
         <div>
           <h2 className="text-3xl font-serif mb-6">Detalles del producto</h2>
           <ul className="space-y-3 text-[#4A4A4A]">
@@ -97,14 +83,34 @@ export default function SillaAureliaTapizada() {
           </div>
         </div>
 
-        {/* VIDEO */}
-        <div className="space-y-6">
+        {/* Carrusel de imágenes y video */}
+        <div className="space-y-6 relative">
+          <div className="relative">
+            <img
+              src={galeria[indice]}
+              alt={`Silla Aurelia ${indice + 1}`}
+              className="rounded-3xl shadow-md w-full object-cover transition-all duration-500"
+            />
+
+            {/* Botones carrusel */}
+            <button
+              onClick={anterior}
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white text-[#3E2C22] p-2 rounded-full shadow transition"
+            >
+              ‹
+            </button>
+            <button
+              onClick={siguiente}
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white text-[#3E2C22] p-2 rounded-full shadow transition"
+            >
+              ›
+            </button>
+          </div>
+
+          {/* Video */}
           <video
             src={video}
             controls
-            autoPlay
-            muted
-            loop
             className="w-full rounded-3xl shadow-md mt-6"
           >
             Tu navegador no soporta la reproducción de video.

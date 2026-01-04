@@ -17,6 +17,7 @@ export default function MesaCuadrada() {
 
   return (
     <main className="bg-[#F8F6F2] min-h-screen text-[#3E2C22]">
+
       {/* HERO DEL PRODUCTO */}
       <section className="relative">
         <img
@@ -29,21 +30,21 @@ export default function MesaCuadrada() {
             Mesa Cuadrada Línea Nova
           </h1>
           <p className="text-lg max-w-2xl drop-shadow-md">
-            Diseño moderno de algarrobo Finger Joint. Base central y líneas limpias que realzan la nobleza natural de la madera.
+            Madera eterna, diseño que evoluciona. Estructura sólida de algarrobo macizo con base central robusta y líneas limpias.
           </p>
         </div>
       </section>
 
-      {/* DESCRIPCIÓN */}
+      {/* DETALLES */}
       <section className="max-w-6xl mx-auto py-24 px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <div>
           <h2 className="text-3xl font-serif mb-6">Detalles del producto</h2>
           <ul className="space-y-3 text-[#4A4A4A]">
-            <li>• Madera de algarrobo seleccionada (Finger Joint).</li>
-            <li>• Medidas: 1.40m x 1.40m.</li>
-            <li>• Terminación natural con laca semi brillante.</li>
-            <li>• Base central robusta con espacio de guardado.</li>
-            <li>• Ideal para comedores modernos o rústicos elegantes.</li>
+            <li>• Fabricada en madera maciza de algarrobo estacionado.</li>
+            <li>• Unión tipo Finger Joint y encolado con adhesivos de alta resistencia.</li>
+            <li>• Terminación natural con laca semi brillante que protege sin ocultar la textura de la madera.</li>
+            <li>• Base central robusta con compartimiento de guardado interno.</li>
+            <li>• Ideal para comedores modernos, rústicos o contemporáneos.</li>
           </ul>
 
           {/* VARIANTES */}
@@ -71,14 +72,18 @@ export default function MesaCuadrada() {
 
           <h3 className="text-2xl font-serif mt-10 mb-4">Estilo y combinaciones</h3>
           <p className="text-[#4A4A4A] leading-relaxed">
-            Su diseño combina a la perfección con sillas tapizadas o de madera maciza en tonos naturales.
-            Encaja tanto en ambientes minimalistas como en estilos nórdicos o rústicos contemporáneos.
+            Combina perfectamente con sillas tapizadas o de madera de líneas contemporáneas. 
+            Su diseño equilibrado y materiales nobles la convierten en el centro visual de cualquier comedor de diseño argentino.
           </p>
 
-          <h3 className="text-2xl font-serif mt-10 mb-4">Cuidados recomendados</h3>
+          <h3 className="text-2xl font-serif mt-10 mb-4">Cuidados y mantenimiento</h3>
           <p className="text-[#4A4A4A] leading-relaxed">
-            Limpieza con paño húmedo, evitar exposición directa al sol o al calor extremo. 
-            Recomendamos utilizar solo un paño húmedo y lustra mueble en crema o aerosol semanalmente para mantener su brillo y protección.
+            Limpiar con paño húmedo, evitar exposición directa al sol o fuentes de calor. 
+            Recomendamos aplicar lustra muebles en crema o aerosol semanalmente para mantener el brillo y la protección natural de la madera.
+          </p>
+
+          <p className="italic text-[#6A6A6A] text-sm mt-4">
+            *Consultar disponibilidad de medidas especiales o acabados personalizados.*
           </p>
 
           {/* BOTONES */}
@@ -95,7 +100,7 @@ export default function MesaCuadrada() {
             </button>
 
             <a
-              href={`https://wa.me/543743511582?text=Hola!%20Quisiera%20consultar%20por%20la%20Mesa%20Cuadrada%20${varianteSeleccionada.medida}.`}
+              href={`https://wa.me/543743511582?text=Hola!%20Quisiera%20consultar%20por%20la%20Mesa%20Cuadrada%20Línea%20Nova%20(${varianteSeleccionada.medida}).`}
               target="_blank"
               className="border border-[#3E2C22] text-[#3E2C22] px-6 py-3 rounded-2xl hover:bg-[#EDE8E1] transition font-medium"
             >

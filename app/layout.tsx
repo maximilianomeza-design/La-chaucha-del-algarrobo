@@ -10,6 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <body className="bg-[#F8F6F2] text-[#1C1C1C] font-sans antialiased">
+        import Header from "./components/Header";
         {children}
       </body>
     </html>

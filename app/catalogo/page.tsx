@@ -2,7 +2,7 @@ export default function Catalogo() {
   const productos = [
     {
       nombre: "Mesa cuadrada 1.40x1.40 base central",
-      imagen: "/assets/mesa-cuadrada-140-base-central.webp",
+      imagen: "/assets/mesa-cuadrada-1.40x1.40-base-central.webp",
       categoria: "Comedor",
     },
     {
@@ -12,7 +12,7 @@ export default function Catalogo() {
     },
     {
       nombre: "Placard Nova en dormitorio joven",
-      imagen: "/assets/placard-nova-dormitorio-joven.webp",
+      imagen: "/assets/placar-nova-en-dormitorio-joven.webp",
       categoria: "Dormitorio",
     },
     {
@@ -22,7 +22,7 @@ export default function Catalogo() {
     },
     {
       nombre: "Alacena y bajomesada línea Nova",
-      imagen: "/assets/alacenay-bajomesada-linea-nova.webp",
+      imagen: "/assets/alacena-y-bajomesada-linea-nova.webp",
       categoria: "Cocina",
     },
     {

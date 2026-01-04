@@ -89,7 +89,7 @@ export default function SillaAureliaTapizada() {
             <img
               src={galeria[indice]}
               alt={`Silla Aurelia ${indice + 1}`}
-              className="rounded-3xl shadow-md w-full object-cover transition-all duration-500 h-[400px] md:h-[350px] lg:h-[420px]"
+              className="rounded-3xl shadow-md w-full object-cover transition-all duration-500 h-[400px] md:h-[420px] lg:h-[420px]"
             />
 
             {/* Botones carrusel */}
@@ -111,7 +111,7 @@ export default function SillaAureliaTapizada() {
           <video
             src={video}
             controls
-            className="w-full rounded-3xl shadow-md mt-6 h-[360px] md:h-[320px] lg:h-[400px] object-cover"
+            className="w-full rounded-3xl shadow-md mt-6 h-[360px] md:h-[400px] lg:h-[400px] object-cover"
           >
             Tu navegador no soporta la reproducción de video.
           </video>

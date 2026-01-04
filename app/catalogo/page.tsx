@@ -1,40 +1,40 @@
 export default function Catalogo() {
   const productos = [
     {
-      nombre: "Mesa Cuadrada Línea Nova",
-      imagen: "/assets/catalogo/mesas/lineanova/mesa-cuadrada-1.40x1.40-base-central-sinfondo.jpeg",
+      nombre: "Mesa cuadrada 1.40x1.40 base central",
+      imagen: "/assets/mesa-cuadrada-1.40x1.40-base-central.webp",
       categoria: "Comedor",
-      href: "/catalogo/mesa-cuadrada",
+      link: "/catalogo/mesa-cuadrada",
     },
     {
-      nombre: "Silla Aurelia Tapizada",
-      imagen: "/assets/catalogo/sillas/tapizadas/silla-aurelia-tapizada.webp",
+      nombre: "Silla Aurelia tapizada",
+      imagen: "/assets/silla-aurelia-tapizada.webp",
       categoria: "Comedor",
-      href: "/catalogo/sillas/aurelia",
+      link: "/catalogo/sillas/aurelia-tapizada",
     },
     {
-      nombre: "Placard Nova Dormitorio Joven",
-      imagen: "/assets/catalogo/placares/nova/placard-nova-dormitorio-joven.webp",
+      nombre: "Placard Nova en dormitorio joven",
+      imagen: "/assets/placar-nova-en-dormitorio-joven.webp",
       categoria: "Dormitorio",
-      href: "/catalogo/placares/nova",
+      link: "/catalogo/placares/nova",
     },
     {
-      nombre: "Rack TV y Torres Línea Nova",
-      imagen: "/assets/catalogo/living/rack-tv-torres-nova.webp",
+      nombre: "Rack TV y Torres",
+      imagen: "/assets/rack-tv-y-torres.webp",
       categoria: "Living",
-      href: "/catalogo/living/rack-nova",
+      link: "/catalogo/living/rack-nova",
     },
     {
-      nombre: "Alacena y Bajomesada Línea Nova",
-      imagen: "/assets/catalogo/cocinas/alacena-bajomesada-nova.webp",
+      nombre: "Alacena y bajomesada línea Nova",
+      imagen: "/assets/alacena-y-bajomesada-linea-nova.webp",
       categoria: "Cocina",
-      href: "/catalogo/cocinas/nova",
+      link: "/catalogo/cocinas/nova",
     },
     {
       nombre: "Modular Nova 1.50 mts",
-      imagen: "/assets/catalogo/living/modular-nova-150.webp",
+      imagen: "/assets/modular-nova-1.50-mt.webp",
       categoria: "Living",
-      href: "/catalogo/living/modular-nova",
+      link: "/catalogo/living/modular-nova",
     },
   ];
 
@@ -65,7 +65,7 @@ export default function Catalogo() {
               <h3 className="text-lg font-semibold mb-2">{producto.nombre}</h3>
               <p className="text-sm mb-4 opacity-80">{producto.categoria}</p>
               <a
-                href={producto.href}
+                href={producto.link}
                 className="bg-white text-[#3E2C22] px-5 py-2 rounded-2xl font-medium hover:bg-[#EDE8E1] transition"
               >
                 Ver detalles

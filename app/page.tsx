@@ -36,9 +36,9 @@ export default function Home() {
       {/* GALERÍA DE MUEBLES */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 py-24">
         {[
-          { src: "/assets/mesa-cuadrada-140-base-central.webp", title: "Comedores" },
+          { src: "/assets/mesa-cuadrada-1.40x1.40-base-central.webp", title: "Comedores" },
           { src: "/assets/silla-aurelia-tapizada.webp", title: "Sillas" },
-          { src: "/assets/placard-nova-dormitorio-joven.webp", title: "Placares" },
+          { src: "/assets/placar-nova-en-dormitorio-joven.webp", title: "Placares" },
         ].map((item, i) => (
           <div
             key={i}

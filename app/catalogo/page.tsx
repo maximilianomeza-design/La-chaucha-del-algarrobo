@@ -59,7 +59,7 @@ export default function Catalogo() {
               <h3 className="text-lg font-semibold mb-2">{producto.nombre}</h3>
               <p className="text-sm mb-4 opacity-80">{producto.categoria}</p>
               <a
-                href="#"
+                href="/catalogo/mesa-cuadrada"
                 className="bg-white text-[#3E2C22] px-5 py-2 rounded-2xl font-medium hover:bg-[#EDE8E1] transition"
               >
                 Ver detalles

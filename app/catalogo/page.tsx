@@ -28,7 +28,7 @@ export default function Catalogo() {
             </div>
             <div className="p-4 text-center">
               <p className="text-sm text-[#4A4A4A]">
-                Muebles de diseño contemporáneo hechos con madera maciza de algarrobo.
+                Muebles de diseño contemporáneo hechos con madera maciza de algarrobo 100% seleccionado.
               </p>
             </div>
           </div>

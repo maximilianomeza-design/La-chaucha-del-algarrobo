@@ -11,7 +11,12 @@ export default function SillaAureliaTapizada() {
 
   const video = "/assets/catalogo/sillas/tapizadas/silla-aurelia-tapizada2.mp4";
 
+  const variantes = [
+    { medida: "Altura total: 1.00 m / Asiento: 0.45 x 0.45 m", precio: "AR$ 185.000" },
+  ];
+
   const [indice, setIndice] = useState(0);
+  const [varianteSeleccionada, setVarianteSeleccionada] = useState(variantes[0]);
 
   const siguiente = () => setIndice((prev) => (prev + 1) % galeria.length);
   const anterior = () =>
@@ -31,29 +36,50 @@ export default function SillaAureliaTapizada() {
             Silla Aurelia Tapizada
           </h1>
           <p className="text-lg max-w-2xl drop-shadow-md">
-            Elegancia contemporánea con estructura maciza de algarrobo.  
-            Su tapizado artesanal brinda confort y estilo, ideal para comedores modernos.
+            Estructura maciza de algarrobo y tapizado artesanal en telas seleccionadas.  
+            Comodidad y estilo que elevan cualquier comedor.
           </p>
         </div>
       </section>
 
-      {/* DESCRIPCIÓN + GALERÍA */}
+      {/* DETALLES + GALERÍA */}
       <section className="max-w-6xl mx-auto py-24 px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        {/* Texto descriptivo */}
+        {/* Columna izquierda: detalles */}
         <div>
           <h2 className="text-3xl font-serif mb-6">Detalles del producto</h2>
           <ul className="space-y-3 text-[#4A4A4A]">
-            <li>• Estructura maciza de algarrobo (Finger Joint).</li>
-            <li>• Tapizado artesanal en telas de alta resistencia.</li>
-            <li>• Terminación natural con laca protectora semi mate.</li>
-            <li>• Ideal para comedores contemporáneos o nórdicos.</li>
+            <li>• Estructura maciza de algarrobo.</li>
+            <li>• Tapizado artesanal con espuma de alta densidad.</li>
+            <li>• Laca protectora semi brillante resistente al uso diario.</li>
+            <li>• Ideal para comedores modernos, clásicos o nórdicos.</li>
           </ul>
 
-          <h3 className="text-2xl font-serif mt-10 mb-4">Estilo y combinaciones</h3>
-          <p className="text-[#4A4A4A] leading-relaxed">
-            Su diseño combina perfectamente con mesas de líneas modernas o rústicas.
-            Disponible en variedad de tonos según stock y telas seleccionadas.
-          </p>
+          {/* VARIANTES */}
+          <div className="mt-8">
+            <h3 className="text-2xl font-serif mb-2">Medidas disponibles</h3>
+            <select
+              className="border border-[#3E2C22] rounded-xl px-4 py-2 bg-white"
+              value={varianteSeleccionada.medida}
+              onChange={(e) => {
+                const v = variantes.find((v) => v.medida === e.target.value);
+                if (v) setVarianteSeleccionada(v);
+              }}
+            >
+              {variantes.map((v, i) => (
+                <option key={i} value={v.medida}>
+                  {v.medida}
+                </option>
+              ))}
+            </select>
+
+            <p className="mt-4 text-lg">
+              <strong>Precio:</strong> {varianteSeleccionada.precio}
+            </p>
+
+            <p className="text-sm text-[#6B5E52] mt-2">
+              *Consultar disponibilidad de telas y colores.
+            </p>
+          </div>
 
           <h3 className="text-2xl font-serif mt-10 mb-4">Cuidados recomendados</h3>
           <p className="text-[#4A4A4A] leading-relaxed">
@@ -67,14 +93,18 @@ export default function SillaAureliaTapizada() {
             <button
               className="bg-[#3E2C22] text-white px-6 py-3 rounded-2xl hover:bg-[#5B4636] transition font-medium"
               onClick={() =>
-                alert("Silla Aurelia Tapizada agregada al carrito (modo demostración)")
+                alert(
+                  `Silla Aurelia Tapizada (${varianteSeleccionada.medida}) agregada al carrito (modo demostración)`
+                )
               }
             >
               Agregar al carrito 🛒
             </button>
 
             <a
-              href="https://wa.me/543743511582?text=Hola!%20Quisiera%20consultar%20por%20la%20Silla%20Aurelia%20Tapizada."
+              href={`https://wa.me/543743511582?text=Hola!%20Quisiera%20consultar%20por%20la%20Silla%20Aurelia%20Tapizada%20(${encodeURIComponent(
+                varianteSeleccionada.medida
+              )}).`}
               target="_blank"
               className="border border-[#3E2C22] text-[#3E2C22] px-6 py-3 rounded-2xl hover:bg-[#EDE8E1] transition font-medium"
             >
@@ -83,15 +113,14 @@ export default function SillaAureliaTapizada() {
           </div>
         </div>
 
-        {/* Carrusel de imágenes y video */}
+        {/* Columna derecha: galería y video */}
         <div className="space-y-6 relative">
           <div className="relative">
             <img
               src={galeria[indice]}
               alt={`Silla Aurelia ${indice + 1}`}
-              className="rounded-3xl shadow-md w-full object-cover transition-all duration-500 h-[400px] md:h-[420px] lg:h-[420px]"
+              className="rounded-3xl shadow-md w-full object-cover transition-all duration-500 h-[400px] md:h-[400px] lg:h-[420px]"
             />
-
             {/* Botones carrusel */}
             <button
               onClick={anterior}
@@ -107,18 +136,16 @@ export default function SillaAureliaTapizada() {
             </button>
           </div>
 
-          {/* Video */}
           <video
             src={video}
             controls
-            className="w-full rounded-3xl shadow-md mt-6 h-[360px] md:h-[400px] lg:h-[400px] object-cover"
+            className="w-full rounded-3xl shadow-md mt-6 h-[360px] md:h-[320px] lg:h-[400px] object-cover"
           >
             Tu navegador no soporta la reproducción de video.
           </video>
 
-          {/* Texto debajo del video */}
           <p className="text-center text-sm text-[#4A4A4A] mt-2 italic">
-            Video creado con IA.
+            Video creado con IA — visualización del producto en detalle.
           </p>
         </div>
       </section>

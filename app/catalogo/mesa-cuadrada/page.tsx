@@ -23,7 +23,7 @@ export default function MesaCuadrada() {
         <div>
           <h2 className="text-3xl font-serif mb-6">Detalles del producto</h2>
           <ul className="space-y-3 text-[#4A4A4A]">
-            <li>• Madera maciza de algarrobo seleccionada</li>
+            <li>• Finger Joint de algarrobo seleccionado</li>
             <li>• Medidas: 1.40m x 1.40m</li>
             <li>• Terminación natural con laca protectora semi brillante</li>
             <li>• Base central robusta y estable con compartimiento de guardado</li>

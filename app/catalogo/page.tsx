@@ -1,48 +1,89 @@
 export default function Catalogo() {
-  const categorias = [
-    "Comedores",
-    "Cocinas",
-    "Dormitorios",
-    "Living",
-    "Muebles a medida",
+  const productos = [
+    {
+      nombre: "Mesa cuadrada 1.40x1.40 base central",
+      imagen: "/assets/mesa-cuadrada-140-base-central.webp",
+      categoria: "Comedor",
+    },
+    {
+      nombre: "Silla Aurelia tapizada",
+      imagen: "/assets/silla-aurelia-tapizada.webp",
+      categoria: "Comedor",
+    },
+    {
+      nombre: "Placard Nova en dormitorio joven",
+      imagen: "/assets/placard-nova-dormitorio-joven.webp",
+      categoria: "Dormitorio",
+    },
+    {
+      nombre: "Rack TV y Torres",
+      imagen: "/assets/rack-tv-y-torres.webp",
+      categoria: "Living",
+    },
+    {
+      nombre: "Alacena y bajomesada línea Nova",
+      imagen: "/assets/alacenay-bajomesada-linea-nova.webp",
+      categoria: "Cocina",
+    },
+    {
+      nombre: "Modular Nova 1.50 mts",
+      imagen: "/assets/modular-nova-1.50-mt.webp",
+      categoria: "Living",
+    },
   ];
 
   return (
-    <main className="min-h-screen bg-[#F8F6F2] text-[#1C1C1C] pt-32 pb-24 px-6 max-w-6xl mx-auto">
-      <h2 className="text-4xl font-serif text-center text-[#3E2C22] mb-10">
-        Catálogo de Muebles
-      </h2>
-      <p className="text-center text-[#4A4A4A] max-w-2xl mx-auto mb-12">
-        Explorá nuestras líneas de muebles diseñadas para integrarse a hogares actuales,
-        respetando la nobleza de la madera y elevando cada espacio.
-      </p>
+    <main className="bg-[#F8F6F2] min-h-screen text-[#3E2C22]">
+      {/* Encabezado */}
+      <section className="text-center py-24 px-6 bg-[#EDE8E1]">
+        <h1 className="text-4xl font-serif mb-4">Piezas únicas, creadas para durar</h1>
+        <p className="text-lg max-w-2xl mx-auto">
+          Explorá nuestras líneas de muebles diseñadas para integrarse a hogares actuales,
+          respetando la nobleza de la madera y elevando cada espacio.
+        </p>
+      </section>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {categorias.map((cat) => (
+      {/* Grilla de productos */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-7xl mx-auto">
+        {productos.map((producto, index) => (
           <div
-            key={cat}
-            className="bg-white rounded-2xl shadow-md overflow-hidden border border-[#E5E1DA] hover:shadow-lg transition"
+            key={index}
+            className="relative group rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-md transition"
           >
-            <div className="bg-[#EDE8E1] h-48 flex items-center justify-center">
-              <span className="text-[#3E2C22] font-serif text-xl">{cat}</span>
-            </div>
-            <div className="p-4 text-center">
-              <p className="text-sm text-[#4A4A4A]">
-                Muebles de diseño contemporáneo hechos con madera maciza de algarrobo 100% seleccionado.
-              </p>
+            <img
+              src={producto.imagen}
+              alt={producto.nombre}
+              className="w-full h-80 object-cover group-hover:scale-105 transition-transform"
+            />
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-center text-white transition">
+              <h3 className="text-lg font-semibold mb-2">{producto.nombre}</h3>
+              <p className="text-sm mb-4 opacity-80">{producto.categoria}</p>
+              <a
+                href="#"
+                className="bg-white text-[#3E2C22] px-5 py-2 rounded-2xl font-medium hover:bg-[#EDE8E1] transition"
+              >
+                Ver detalles
+              </a>
             </div>
           </div>
         ))}
-      </div>
+      </section>
 
-      <div className="text-center mt-16">
+      {/* CTA final */}
+      <section className="text-center py-20 bg-[#EDE8E1]">
+        <h2 className="text-3xl font-serif mb-4">
+          Elegí un mueble que te acompañe toda la vida.
+        </h2>
+        <p className="mb-6 text-[#4A4A4A]">
+          Diseño argentino. Madera maciza. Producción consciente.
+        </p>
         <a
           href="/contacto"
-          className="bg-[#3E2C22] text-white px-8 py-3 rounded-2xl hover:bg-[#5B4636] transition"
+          className="bg-[#3E2C22] text-white px-8 py-4 rounded-2xl hover:bg-[#5B4636] transition font-medium"
         >
-          Consultar disponibilidad
+          Consultar o pedir presupuesto
         </a>
-      </div>
+      </section>
     </main>
   );
 }

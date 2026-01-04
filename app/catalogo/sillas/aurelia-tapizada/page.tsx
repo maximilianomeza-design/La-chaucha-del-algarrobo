@@ -9,7 +9,7 @@ export default function SillaAureliaTapizada() {
     "/assets/catalogo/sillas/tapizadas/silla-aurelia-tapizado-bordo.webp",
   ];
 
-  const video = "/assets/catalogo/sillas/tapizadas/silla aurelia tapizada2.mp4";
+  const video = "/assets/catalogo/sillas/tapizadas/silla-aurelia-tapizada2.mp4";
 
   const [indice, setIndice] = useState(0);
 
@@ -19,7 +19,7 @@ export default function SillaAureliaTapizada() {
 
   return (
     <main className="bg-[#F8F6F2] min-h-screen text-[#3E2C22]">
-      {/* HERO - una sola imagen destacada */}
+      {/* HERO */}
       <section className="relative">
         <img
           src="/assets/catalogo/sillas/tapizadas/silla-aurelia-tapizada.webp"
@@ -89,7 +89,7 @@ export default function SillaAureliaTapizada() {
             <img
               src={galeria[indice]}
               alt={`Silla Aurelia ${indice + 1}`}
-              className="rounded-3xl shadow-md w-full object-cover transition-all duration-500"
+              className="rounded-3xl shadow-md w-full object-cover transition-all duration-500 h-[400px] md:h-[350px] lg:h-[420px]"
             />
 
             {/* Botones carrusel */}
@@ -111,10 +111,15 @@ export default function SillaAureliaTapizada() {
           <video
             src={video}
             controls
-            className="w-full rounded-3xl shadow-md mt-6"
+            className="w-full rounded-3xl shadow-md mt-6 h-[360px] md:h-[320px] lg:h-[400px] object-cover"
           >
             Tu navegador no soporta la reproducción de video.
           </video>
+
+          {/* Texto debajo del video */}
+          <p className="text-center text-sm text-[#4A4A4A] mt-2 italic">
+            Video creado con IA.
+          </p>
         </div>
       </section>
 

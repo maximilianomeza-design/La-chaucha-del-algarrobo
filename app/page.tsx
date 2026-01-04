@@ -9,9 +9,11 @@ export default function Home() {
           alt="Muebles de algarrobo contemporáneos"
           className="w-full h-[85vh] object-cover"
         />
-        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center text-white px-6">
-          <h1 className="text-5xl font-serif mb-4">Madera eterna, diseño que evoluciona.</h1>
-          <p className="text-lg max-w-2xl mb-8">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-transparent flex flex-col items-center justify-center text-center text-white px-6">
+          <h1 className="text-5xl font-serif mb-4 drop-shadow-lg">
+            Madera eterna, diseño que evoluciona.
+          </h1>
+          <p className="text-lg max-w-2xl mb-8 drop-shadow-md">
             Piezas de algarrobo que combinan tradición artesanal y diseño contemporáneo.
           </p>
           <div className="flex gap-4">
@@ -38,19 +40,19 @@ export default function Home() {
           { src: "/assets/silla-aurelia-tapizada.webp", title: "Sillas" },
           { src: "/assets/placard-nova-dormitorio-joven.webp", title: "Placares" },
         ].map((item, i) => (
-          <div key={i} className="relative group overflow-hidden rounded-3xl shadow-sm">
+          <div
+            key={i}
+            className="relative group overflow-hidden rounded-3xl shadow-sm bg-white"
+          >
             <img
               src={item.src}
               alt={item.title}
               className="object-cover w-full h-80 group-hover:scale-105 transition"
             />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition">
-              <a
-                href="/catalogo"
-                className="bg-white text-[#3E2C22] px-5 py-2 rounded-2xl font-medium"
-              >
+            <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition">
+              <span className="bg-white text-[#3E2C22] px-5 py-2 rounded-2xl font-medium">
                 {item.title}
-              </a>
+              </span>
             </div>
           </div>
         ))}

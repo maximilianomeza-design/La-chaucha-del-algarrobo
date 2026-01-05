@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             alt="La Chaucha del Algarrobo"
             className="h-12 mx-auto mb-4"
           />
-          <p className="mb-2">Hecho en Chaco. Pensado para todo el país.</p>
+          <p className="mb-2">Hecho en Chaco. Pensado para tu casa.</p>
           <div className="flex justify-center gap-6 mt-4">
             <a
               href="https://www.instagram.com/lachauchadelalgarrobo/"

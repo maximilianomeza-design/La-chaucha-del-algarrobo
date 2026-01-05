@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function MesaCuadrada() {
   const galeria = [
-    "/assets/catalogo/mesas/lineanova/mesa-cuadrada-1.40x1.40-base-central-sinfondo.jpeg",
+    "/assets/catalogo/mesas/lineanova/mesa-cuadrada-1.40x1.40-sola.webp",
   ];
   const video = "/assets/catalogo/mesas/lineanova/mesa-cuadrada-base-central.mp4";
 

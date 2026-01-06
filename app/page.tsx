@@ -22,7 +22,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative">
         <img
-          src="/assets/mesa-comedor-tradicional.webp"
+          src="/assets/tabla-con-logo.jpg"
           alt="Muebles de algarrobo contemporáneos"
           className="w-full h-[85vh] object-cover"
         />
@@ -57,7 +57,7 @@ export default function Home() {
         <div className="relative max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-md">
           {/* Imagen principal */}
           <img
-            src="/assets/catalogo/cocina/linea-clasica/Alacena-y-bajomesada-1.60-clasica-sin-fondo.webp"
+            src="/assets/Alacena-y-bajomesada-1.60-clasica.webp"
             alt="Alacena y bajomesada línea Clásica"
             className="w-full h-[480px] object-cover"
           />

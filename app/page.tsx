@@ -2,13 +2,15 @@
 import { useEffect } from "react";
 
 export default function Home() {
+  // 👇 Cambiá a true o false según si querés mostrar el cartel "Últimas Unidades"
+  const mostrarUltimasUnidades = true;
+
   useEffect(() => {
-    // Esto asegura que la animación se reinicie correctamente si se cambia de pestaña
     const banners = document.querySelectorAll(".animate-marquee");
     banners.forEach((banner) => {
       banner.addEventListener("animationiteration", () => {
         banner.classList.remove("animate-marquee");
-        void banner.offsetWidth; // reinicia animación
+        void banner.offsetWidth;
         banner.classList.add("animate-marquee");
       });
     });
@@ -54,15 +56,22 @@ export default function Home() {
         <div className="relative max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-md">
           {/* Imagen principal */}
           <img
-            src="public/assets/Alacena-y-bajomesada-1.60-clasica.webp"
+            src="/assets/catalogo/cocina/linea-clasica/Alacena-y-bajomesada-1.60-clasica-sin-fondo.webp"
             alt="Alacena y bajomesada línea Clásica"
             className="w-full h-[480px] object-cover"
           />
 
           {/* Badge superior */}
-          <span className="absolute top-5 left-5 bg-[#D72638] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md">
+          <span className="absolute top-5 left-5 bg-[#D72638] text-white px-5 py-2 rounded-full text-base font-semibold shadow-md">
             EN PROMOCIÓN
           </span>
+
+          {/* NUEVO: Badge 'Últimas Unidades' con efecto brillante */}
+          {mostrarUltimasUnidades && (
+            <span className="absolute top-5 right-5 bg-gradient-to-r from-[#FFD700] via-[#F8E37D] to-[#FFD700] text-[#3E2C22] px-6 py-3 rounded-full text-lg font-bold shadow-lg animate-glow">
+              ¡🔥 Últimas Unidades 🔥!
+            </span>
+          )}
 
           {/* Banner tipo cartel luminoso */}
           <div className="absolute bottom-0 left-0 w-full bg-gradient-to-r from-[#E0C186] via-[#F0D9A7] to-[#E0C186] py-4 overflow-hidden shadow-inner">
@@ -102,7 +111,7 @@ export default function Home() {
         </a>
       </section>
 
-      {/* Estilos del banner animado */}
+      {/* Estilos del banner animado y glow */}
       <style jsx>{`
         @keyframes marquee {
           0% {
@@ -115,6 +124,24 @@ export default function Home() {
         .animate-marquee {
           display: inline-block;
           animation: marquee linear infinite;
+        }
+
+        @keyframes glow {
+          0% {
+            box-shadow: 0 0 5px #f8e37d, 0 0 15px #ffd700;
+            transform: scale(1);
+          }
+          50% {
+            box-shadow: 0 0 15px #ffe066, 0 0 30px #ffd700;
+            transform: scale(1.05);
+          }
+          100% {
+            box-shadow: 0 0 5px #f8e37d, 0 0 15px #ffd700;
+            transform: scale(1);
+          }
+        }
+        .animate-glow {
+          animation: glow 2.5s ease-in-out infinite;
         }
       `}</style>
     </main>

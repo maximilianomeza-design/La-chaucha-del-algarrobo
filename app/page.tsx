@@ -69,10 +69,13 @@ export default function Home() {
 
           {/* NUEVO: Badge 'Últimas Unidades' con efecto brillante */}
           {mostrarUltimasUnidades && (
-            <span className="absolute top-5 right-5 bg-gradient-to-r from-[#FFD700] via-[#F8E37D] to-[#FFD700] text-[#3E2C22] px-6 py-3 rounded-full text-lg font-bold shadow-lg animate-glow">
-              ¡🔥 Últimas Unidades 🔥!
-            </span>
-          )}
+  <span
+    className="absolute right-5 top-20 sm:top-5 bg-gradient-to-r from-[#FFD700] via-[#F8E37D] to-[#FFD700]
+    text-[#3E2C22] px-4 py-2 sm:px-6 sm:py-3 rounded-full text-base sm:text-lg font-bold shadow-lg animate-glow"
+  >
+    ¡🔥 Últimas Unidades 🔥!
+  </span>
+)}
 
           {/* Banner tipo cartel luminoso */}
           <div className="absolute bottom-0 left-0 w-full bg-gradient-to-r from-[#E0C186] via-[#F0D9A7] to-[#E0C186] py-4 overflow-hidden shadow-inner">

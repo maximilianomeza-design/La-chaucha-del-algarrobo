@@ -56,7 +56,7 @@ export default function AlacenaClasica() {
           <h2 className="text-3xl font-serif mb-6">Detalles del producto</h2>
           <ul className="space-y-3 text-[#4A4A4A]">
             <li>• Fabricada 100% en madera maciza de algarrobo estacionado.</li>
-            <li>• Ensamble tipo Finger Joint con terminación artesanal.</li>
+            <li>• Ensamble tradicional con terminación artesanal.</li>
             <li>• Amplio espacio de guardado con estantes y cajones reforzados.</li>
             <li>• Terminación natural encerada o con laca semi brillante.</li>
             <li>• Ideal para cocinas clásicas o ambientes rústicos elegantes.</li>

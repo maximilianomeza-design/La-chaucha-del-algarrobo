@@ -8,12 +8,14 @@ export default function Home() {
   useEffect(() => {
     const banners = document.querySelectorAll(".animate-marquee");
     banners.forEach((banner) => {
-      banner.addEventListener("animationiteration", () => {
-        banner.classList.remove("animate-marquee");
-        void banner.offsetWidth;
-        banner.classList.add("animate-marquee");
-      });
-    });
+  const htmlBanner = banner as HTMLElement; // 👈 lo convertimos a HTMLElement
+  htmlBanner.addEventListener("animationiteration", () => {
+    htmlBanner.classList.remove("animate-marquee");
+    void htmlBanner.offsetWidth;
+    htmlBanner.classList.add("animate-marquee");
+  });
+});
+
   }, []);
 
   return (

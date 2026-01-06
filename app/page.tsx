@@ -15,7 +15,6 @@ export default function Home() {
     htmlBanner.classList.add("animate-marquee");
   });
 });
-
   }, []);
 
   return (

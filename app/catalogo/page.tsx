@@ -25,10 +25,10 @@ export default function Catalogo() {
       link: "/catalogo/living/rack-nova",
     },
     {
-      nombre: "Alacena y bajomesada línea Nova",
-      imagen: "/assets/alacena-y-bajomesada-linea-nova.webp",
+      nombre: "Alacena y bajomesada línea Clasica",
+      imagen: "/assets/Alacena-y-bajomesada-1.60-clasica.webp",
       categoria: "Cocina",
-      link: "/catalogo/cocinas/nova",
+      link: "/catalogo/cocinas/clasica",
     },
     {
       nombre: "Modular Nova 1.50 mts",

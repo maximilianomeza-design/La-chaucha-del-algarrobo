@@ -117,7 +117,7 @@ export default function Home() {
                 nombre: "Carlos G.",
                 ubicacion: "Corrientes, Capital",
                 texto:
-                  "Gracias LOre por tu atención impecable y el modular es una cosa de locos. Se nota la dedicación",
+                  "Gracias Lore por tu atención impecable y el modular es una cosa de locos. Se nota la dedicación",
               },
               {
                 nombre: "Sofía M.",

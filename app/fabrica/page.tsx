@@ -49,7 +49,7 @@ export default function Fabrica() {
         </div>
         <div className="relative w-full h-[380px] rounded-3xl overflow-hidden shadow-md">
           <Image
-            src="/assets/plano-pata-mesa-finger.webp"
+            src="/assets/primer-plano-mesa-finger.jpg"
             alt="Detalle artesanal de madera en la fábrica"
             fill
             className="object-cover"

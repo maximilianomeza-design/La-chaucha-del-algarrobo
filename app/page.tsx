@@ -81,10 +81,7 @@ export default function Home() {
             </span>
           )}
           <div className="absolute bottom-0 left-0 w-full bg-gradient-to-r from-[#E0C186] via-[#F0D9A7] to-[#E0C186] py-3 sm:py-4 overflow-hidden shadow-inner">
-            <div
-              className="whitespace-nowrap text-[#3E2C22] text-sm sm:text-lg font-semibold animate-marquee"
-              style={{ animationDuration: "16s" }}
-            >
+            <div className="whitespace-nowrap text-[#3E2C22] text-sm sm:text-lg font-semibold animate-marquee">
               💥 Súper oferta de contado y 6 cuotas fijas sin interés 💥 — Envío sin costo
               (consulte zonas de cobertura) 💥 Súper oferta de contado y 6 cuotas fijas sin
               interés 💥 — Envío sin costo (consulte zonas de cobertura) 💥
@@ -105,7 +102,7 @@ export default function Home() {
         </h2>
 
         <div className="relative w-full max-w-3xl mx-auto">
-          <div id="carousel" className="flex" style={{ animation: "slide 24s infinite ease-in-out" }}>
+          <div id="carousel" className="flex animate-slide">
             {[
               {
                 nombre: "Eduardo Zurita",
@@ -149,19 +146,6 @@ export default function Home() {
           <img src="/assets/google-logo.svg" alt="Google Logo" className="w-5 h-5 mr-2" />
           <span>Verificado por Google</span>
         </div>
-
-        <style jsx>{`
-          @keyframes slide {
-            0%, 20% { transform: translateX(0); }
-            25%, 45% { transform: translateX(-100%); }
-            50%, 70% { transform: translateX(-200%); }
-            75%, 95% { transform: translateX(-300%); }
-            100% { transform: translateX(0); }
-          }
-          #carousel {
-            display: flex;
-          }
-        `}</style>
       </section>
 
       {/* CTA FINAL */}
@@ -189,23 +173,6 @@ export default function Home() {
       >
         <FaWhatsapp size={24} className="sm:w-7 sm:h-7" />
       </a>
-
-      <style jsx>{`
-        @keyframes marquee {
-          0% { transform: translateX(100%); }
-          100% { transform: translateX(-100%); }
-        }
-        .animate-marquee {
-          display: inline-block;
-          animation: marquee linear infinite;
-        }
-        @keyframes glow {
-          0% { box-shadow: 0 0 5px #f8e37d, 0 0 15px #ffd700; transform: scale(1); }
-          50% { box-shadow: 0 0 15px #ffe066, 0 0 30px #ffd700; transform: scale(1.05); }
-          100% { box-shadow: 0 0 5px #f8e37d, 0 0 15px #ffd700; transform: scale(1); }
-        }
-        .animate-glow { animation: glow 2.5s ease-in-out infinite; }
-      `}</style>
     </main>
   );
 }

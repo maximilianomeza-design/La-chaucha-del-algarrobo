@@ -128,46 +128,85 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIOS */}
-      <section className="bg-[#F8F6F2] py-16 sm:py-24 text-center">
-        <h2 className="text-3xl sm:text-4xl font-serif mb-10 sm:mb-12">
-          Lo que dicen nuestros clientes
-        </h2>
-        <div className="max-w-3xl mx-auto relative px-4">
-          {testimonios.map((t, i) => (
-            <div
-              key={i}
-              className={`transition-opacity duration-1000 ease-in-out absolute inset-0 ${
-                i === currentTestimonial ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <div className="bg-white rounded-3xl shadow-lg p-6 sm:p-10 mx-2">
-                <div className="flex justify-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} className="text-[#E0A800] text-lg sm:text-xl mx-0.5" />
-                  ))}
-                </div>
-                <p className="text-base sm:text-lg italic mb-6">"{t.texto}"</p>
-                <p className="font-semibold text-[#3E2C22] text-sm sm:text-base">{t.nombre}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+     {/* Sección de Reseñas con carrusel automático */}
+<section className="py-24 bg-[#F8F6F2] text-center relative overflow-hidden">
+  <h2 className="text-4xl font-serif mb-16 text-[#3E2C22]">
+    Lo que dicen nuestros clientes
+  </h2>
 
-        <div className="mt-20 flex flex-col items-center">
-          <img src="/assets/google-logo.svg" alt="Google" className="w-6 sm:w-8 mb-2 opacity-80" />
-          <p className="text-xs sm:text-sm text-[#4A4A4A]">
-            ⭐ Opiniones verificadas —{" "}
-            <a
-              href="https://share.google/beBdcyz8jnaVdmbIg"
-              target="_blank"
-              className="underline hover:text-[#3E2C22]"
-            >
-              Verificado por Google
-            </a>
-          </p>
+  <div className="relative w-full max-w-3xl mx-auto">
+    <div
+      id="carousel"
+      className="flex transition-transform duration-[1000ms] ease-in-out"
+      style={{
+        animation: "slide 24s infinite",
+      }}
+    >
+      {/* Reseña 1 */}
+      <div className="min-w-full flex flex-col items-center justify-center space-y-4 bg-white p-10 rounded-3xl shadow-md">
+        <div className="flex items-center space-x-1 text-[#FFD700] text-2xl">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
         </div>
-      </section>
+        <img src="/assets/google-logo.svg" alt="Google Logo" className="w-8 h-8 mt-2 opacity-90" />
+        <p className="text-lg italic text-[#3E2C22]">"Excelente atención, muy buena calidad, única en la zona y alrededores."</p>
+        <p className="font-semibold text-[#3E2C22]">Eduardo Zurita</p>
+      </div>
+
+      {/* Reseña 2 */}
+      <div className="min-w-full flex flex-col items-center justify-center space-y-4 bg-white p-10 rounded-3xl shadow-md">
+        <div className="flex items-center space-x-1 text-[#FFD700] text-2xl">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <img src="/assets/google-logo.svg" alt="Google Logo" className="w-8 h-8 mt-2 opacity-90" />
+        <p className="text-lg italic text-[#3E2C22]">
+          "Desde hace bastante tiempo buscaba un sillón mecedora... fue así como felizmente me encontré con La Chaucha del Algarrobo."
+        </p>
+        <p className="font-semibold text-[#3E2C22]">Marcelo Pérez</p>
+      </div>
+
+      {/* Reseña 3 */}
+      <div className="min-w-full flex flex-col items-center justify-center space-y-4 bg-white p-10 rounded-3xl shadow-md">
+        <div className="flex items-center space-x-1 text-[#FFD700] text-2xl">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <img src="/assets/google-logo.svg" alt="Google Logo" className="w-8 h-8 mt-2 opacity-90" />
+        <p className="text-lg italic text-[#3E2C22]">
+          "Una experiencia maravillosa, la calidad, la terminación, realmente muebles de ensueño."
+        </p>
+        <p className="font-semibold text-[#3E2C22]">Maximiliano Meza</p>
+      </div>
+
+      {/* Reseña 4 */}
+      <div className="min-w-full flex flex-col items-center justify-center space-y-4 bg-white p-10 rounded-3xl shadow-md">
+        <div className="flex items-center space-x-1 text-[#FFD700] text-2xl">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <img src="/assets/google-logo.svg" alt="Google Logo" className="w-8 h-8 mt-2 opacity-90" />
+        <p className="text-lg italic text-[#3E2C22]">
+          "Excelente atención y productos de primera calidad."
+        </p>
+        <p className="font-semibold text-[#3E2C22]">Federico Alfredo Francis</p>
+      </div>
+    </div>
+  </div>
+
+  {/* Texto "Verificado por Google" */}
+  <div className="flex justify-center items-center mt-8 text-gray-600 text-sm">
+    <img src="/assets/google-logo.svg" alt="Google Logo" className="w-5 h-5 mr-2" />
+    <span>Verificado por Google</span>
+  </div>
+
+  {/* Animación del carrusel */}
+  <style jsx>{`
+    @keyframes slide {
+      0%, 20% { transform: translateX(0); }
+      25%, 45% { transform: translateX(-100%); }
+      50%, 70% { transform: translateX(-200%); }
+      75%, 95% { transform: translateX(-300%); }
+      100% { transform: translateX(0); }
+    }
+  `}</style>
+</section>
 
       {/* CTA FINAL */}
       <section className="text-center bg-[#EDE8E1] py-16 sm:py-24 px-4 sm:px-6">

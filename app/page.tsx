@@ -1,52 +1,103 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   // 👇 Cambiá a true o false según si querés mostrar el cartel "Últimas Unidades"
   const mostrarUltimasUnidades = true;
 
+  const slides = [
+    {
+      image: "/assets/detalles-taller-hero.webp",
+      title: "Hecho a mano con pasión",
+      text: "Cada pieza nace en nuestro taller, donde la tradición se une al diseño.",
+    },
+    {
+      image: "/assets/showroom-editado.webp",
+      title: "Diseños que inspiran espacios",
+      text: "Visitanos y descubrí cómo la nobleza del algarrobo transforma tu hogar.",
+    },
+    {
+      image: "/assets/placard-hero.webp",
+      title: "Madera eterna, diseño que evoluciona",
+      text: "Colecciones creadas para acompañarte toda la vida.",
+    },
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  // Cambio automático de slides
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  // Animación del banner tipo marquesina
   useEffect(() => {
     const banners = document.querySelectorAll(".animate-marquee");
     banners.forEach((banner) => {
-  const htmlBanner = banner as HTMLElement; // 👈 lo convertimos a HTMLElement
-  htmlBanner.addEventListener("animationiteration", () => {
-    htmlBanner.classList.remove("animate-marquee");
-    void htmlBanner.offsetWidth;
-    htmlBanner.classList.add("animate-marquee");
-  });
-});
+      const htmlBanner = banner as HTMLElement;
+      htmlBanner.addEventListener("animationiteration", () => {
+        htmlBanner.classList.remove("animate-marquee");
+        void htmlBanner.offsetWidth;
+        htmlBanner.classList.add("animate-marquee");
+      });
+    });
   }, []);
 
   return (
     <main className="bg-[#F8F6F2] text-[#3E2C22]">
-      {/* HERO */}
-      <section className="relative">
-        <img
-          src="/assets/tabla-con-logo.jpg"
-          alt="Muebles de algarrobo contemporáneos"
-          className="w-full h-[85vh] object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-transparent flex flex-col items-center justify-center text-center text-white px-6">
-          <h1 className="text-5xl font-serif mb-4 drop-shadow-lg">
-            Madera eterna, diseño que evoluciona.
-          </h1>
-          <p className="text-lg max-w-2xl mb-8 drop-shadow-md">
-            Piezas de algarrobo que combinan tradición artesanal y diseño contemporáneo.
-          </p>
-          <div className="flex gap-4">
-            <a
-              href="/catalogo"
-              className="bg-white text-[#3E2C22] px-6 py-3 rounded-2xl font-medium hover:bg-[#EDE8E1] transition"
-            >
-              Ver catálogo
-            </a>
-            <a
-              href="/fabrica"
-              className="border border-white px-6 py-3 rounded-2xl hover:bg-white/20 transition"
-            >
-              Conocer la fábrica
-            </a>
+      {/* HERO con transiciones suaves */}
+      <section className="relative h-[90vh] overflow-hidden">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
+              index === current ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          >
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-6">
+              <h1 className="text-5xl font-serif mb-4 drop-shadow-lg animate-fade-in">
+                {slide.title}
+              </h1>
+              <p className="text-lg max-w-2xl mb-8 drop-shadow-md animate-fade-in-delayed">
+                {slide.text}
+              </p>
+              <div className="flex gap-4">
+                <a
+                  href="/catalogo"
+                  className="bg-white text-[#3E2C22] px-6 py-3 rounded-2xl font-medium hover:bg-[#EDE8E1] transition"
+                >
+                  Ver catálogo
+                </a>
+                <a
+                  href="/fabrica"
+                  className="border border-white px-6 py-3 rounded-2xl hover:bg-white/20 transition"
+                >
+                  Conocer la fábrica
+                </a>
+              </div>
+            </div>
           </div>
+        ))}
+
+        {/* Indicadores */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrent(index)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                index === current ? "bg-white w-6" : "bg-white/50"
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -69,13 +120,13 @@ export default function Home() {
 
           {/* NUEVO: Badge 'Últimas Unidades' con efecto brillante */}
           {mostrarUltimasUnidades && (
-  <span
-    className="absolute right-5 top-20 sm:top-5 bg-gradient-to-r from-[#FFD700] via-[#F8E37D] to-[#FFD700]
-    text-[#3E2C22] px-4 py-2 sm:px-6 sm:py-3 rounded-full text-base sm:text-lg font-bold shadow-lg animate-glow"
-  >
-    ¡🔥 Últimas Unidades 🔥!
-  </span>
-)}
+            <span
+              className="absolute right-5 top-20 sm:top-5 bg-gradient-to-r from-[#FFD700] via-[#F8E37D] to-[#FFD700]
+              text-[#3E2C22] px-4 py-2 sm:px-6 sm:py-3 rounded-full text-base sm:text-lg font-bold shadow-lg animate-glow"
+            >
+              ¡🔥 Últimas Unidades 🔥!
+            </span>
+          )}
 
           {/* Banner tipo cartel luminoso */}
           <div className="absolute bottom-0 left-0 w-full bg-gradient-to-r from-[#E0C186] via-[#F0D9A7] to-[#E0C186] py-4 overflow-hidden shadow-inner">
@@ -115,7 +166,7 @@ export default function Home() {
         </a>
       </section>
 
-      {/* Estilos del banner animado y glow */}
+      {/* Estilos personalizados */}
       <style jsx>{`
         @keyframes marquee {
           0% {
@@ -146,6 +197,25 @@ export default function Home() {
         }
         .animate-glow {
           animation: glow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in {
+          animation: fadeIn 1.2s ease-out forwards;
+        }
+        .animate-fade-in-delayed {
+          animation: fadeIn 1.6s ease-out forwards;
+          animation-delay: 0.3s;
         }
       `}</style>
     </main>

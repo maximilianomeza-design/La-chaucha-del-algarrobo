@@ -6,27 +6,27 @@ export default function Historia() {
     {
       texto:
         "Desde el corazón del Chaco, nació una idea simple: reescribir el legado del algarrobo con diseño contemporáneo, sin perder la esencia de lo artesanal.",
-      imagen: "/assets/fabrica-plano-general.webp",
+      imagen: "/assets/historia-escena1.webp",
     },
     {
       texto:
         "Somos La Chaucha del Algarrobo. Fusionamos tradición artesanal con innovación, para crear muebles que cuentan historias y trascienden generaciones.",
-      imagen: "/assets/plano-pata-mesa-finger.webp",
+      imagen: "/assets/historia-escena2.webp",
     },
     {
       texto:
         "Cada pieza es única. Hecha con respeto por la naturaleza, precisión en los detalles y pasión por el diseño.",
-      imagen: "/assets/plano-corredera-metalica.webp",
+      imagen: "/assets/historia-escena3.webp",
     },
     {
       texto:
         "Queremos cambiar la percepción del algarrobo: de lo rústico a lo premium, de lo clásico a lo eterno.",
-      imagen: "/assets/plano-visagra-cazoleta.webp",
+      imagen: "/assets/historia-escena4.webp",
     },
     {
       texto:
         "Desde Machagai al país, llevamos un pedazo de nuestra tierra a cada hogar. Porque el futuro también se fabrica en madera.",
-      imagen: "/assets/fabrica-plano-general.webp",
+      imagen: "/assets/historia-escena5.webp",
     },
   ];
 
@@ -75,7 +75,8 @@ export default function Historia() {
         }`}
       >
         <img
-          src="/assets/logo.svg"
+          src="/assets/logo-la-chaucha.webp
+"
           alt="Logo La Chaucha del Algarrobo"
           className="w-44 sm:w-60 mb-8 animate-fadeInSlow drop-shadow-lg"
         />
@@ -92,7 +93,7 @@ export default function Historia() {
       </div>
 
       {/* Audio de fondo */}
-      <audio id="bg-audio" src="/assets/audio/historia.mp3" autoPlay loop />
+      <audio id="bg-audio" src="/assets/audio/instrumental2.mp3" autoPlay loop />
 
       {/* Estilos de animación */}
       <style jsx>{`

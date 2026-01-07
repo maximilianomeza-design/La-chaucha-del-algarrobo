@@ -78,12 +78,12 @@ export default function Historia() {
 
       {/* Música de fondo */}
       <audio
-        src="/assets/audio/historia.mp3"
-        autoPlay
-        loop
-        controls={false}
-        volume={0.5}
-      />
+  id="bg-audio"
+  src="/assets/audio/historia.mp3"
+  autoPlay
+  loop
+  controls={false}
+/>
 
       {/* Estilos de animación */}
       <style jsx>{`

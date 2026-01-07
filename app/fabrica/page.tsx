@@ -19,8 +19,8 @@ export default function Fabrica() {
             De la fábrica a tu casa
           </h3>
           <p className="text-[#4A4A4A] mb-6">
-            Trabajamos sin intermediarios ni stock innecesario. Cada pedido se realiza con
-            precisión y cuidado, utilizando madera maciza seleccionada. Esto nos permite
+            Ofrecemos muebles de algarrobo directamente a nuestros clientes sin intermediarios. Cada pieza se realiza con
+            precisión y cuidado, utilizando madera maciza 100 % seleccionada. Esto nos permite
             garantizar un control total sobre la calidad y una experiencia de compra directa,
             transparente y humana.
           </p>

@@ -7,7 +7,7 @@ export default function Home() {
     {
       image: "/assets/detalles-taller-hero.webp",
       title: "Hecho a mano con pasión",
-      text: "Cada pieza nace en nuestro taller, donde la tradición se une al diseño.",
+      text: "Cada pieza nace en nuestro taller, donde lo artesanal se une al diseño.",
     },
     {
       image: "/assets/showroom-editado.webp",
@@ -111,19 +111,19 @@ export default function Home() {
                 nombre: "María L.",
                 ubicacion: "Resistencia, Chaco",
                 texto:
-                  "Excelente calidad y terminación. La mesa que compré superó mis expectativas.",
+                  "Excelente calidad y terminación. La mesa que compré realmente superó mis expectativas.",
               },
               {
                 nombre: "Carlos G.",
                 ubicacion: "Corrientes, Capital",
                 texto:
-                  "Atención impecable y productos realmente premium. Se nota la dedicación artesanal.",
+                  "Gracias LOre por tu atención impecable y el modular es una cosa de locos. Se nota la dedicación",
               },
               {
                 nombre: "Sofía M.",
                 ubicacion: "Santa Fe",
                 texto:
-                  "El diseño y la calidez del algarrobo son únicos. Recomendadísimos.",
+                  "Y ahora que hago con mis otros muebles de algarrobo, la diferencia es abismal. Recomendadísimos.",
               },
             ].map((t, i) => (
               <div

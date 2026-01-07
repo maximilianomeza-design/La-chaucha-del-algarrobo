@@ -64,7 +64,7 @@ export default function Historia() {
         }`}
       >
         <img
-          src="/assets/logo.svg"
+          src="/assets/logo-la-chaucha.webp"
           alt="Logo La Chaucha del Algarrobo"
           className="w-40 sm:w-56 mb-6 animate-fadeInSlow"
         />

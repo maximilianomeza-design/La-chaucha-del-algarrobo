@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { FaWhatsapp, FaStar } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Home() {
   const mostrarUltimasUnidades = true;
@@ -11,43 +11,13 @@ export default function Home() {
     { src: "/assets/showroom-editado.webp", alt: "Showroom La Chaucha del Algarrobo" },
   ];
 
-  const testimonios = [
-    {
-      nombre: "Marcelo Pérez",
-      texto:
-        "Desde hace bastante tiempo buscaba un sillón mecedora. Felizmente me encontré con La Chaucha del Algarrobo.",
-    },
-    {
-      nombre: "Eduardo Zurita",
-      texto:
-        "Excelente atención, muy buena calidad, única en la zona y alrededores.",
-    },
-    {
-      nombre: "Maximiliano Meza",
-      texto:
-        "Una experiencia maravillosa, la calidad, la terminación, realmente muebles de ensueño.",
-    },
-    {
-      nombre: "Federico Alfredo Francis",
-      texto:
-        "Todo impecable. Muebles de excelente terminación y muy buena atención.",
-    },
-  ];
-
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   useEffect(() => {
     const slideTimer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
     }, 5000);
-    const testimonialTimer = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonios.length);
-    }, 6000);
-    return () => {
-      clearInterval(slideTimer);
-      clearInterval(testimonialTimer);
-    };
+    return () => clearInterval(slideTimer);
   }, []);
 
   return (
@@ -128,85 +98,71 @@ export default function Home() {
         </div>
       </section>
 
-     {/* Sección de Reseñas con carrusel automático */}
-<section className="py-24 bg-[#F8F6F2] text-center relative overflow-hidden">
-  <h2 className="text-4xl font-serif mb-16 text-[#3E2C22]">
-    Lo que dicen nuestros clientes
-  </h2>
+      {/* CARRUSEL DE RESEÑAS */}
+      <section className="py-24 bg-[#F8F6F2] text-center relative overflow-hidden">
+        <h2 className="text-4xl font-serif mb-16 text-[#3E2C22]">
+          Lo que dicen nuestros clientes
+        </h2>
 
-  <div className="relative w-full max-w-3xl mx-auto">
-    <div
-      id="carousel"
-      className="flex transition-transform duration-[1000ms] ease-in-out"
-      style={{
-        animation: "slide 24s infinite",
-      }}
-    >
-      {/* Reseña 1 */}
-      <div className="min-w-full flex flex-col items-center justify-center space-y-4 bg-white p-10 rounded-3xl shadow-md">
-        <div className="flex items-center space-x-1 text-[#FFD700] text-2xl">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        <div className="relative w-full max-w-3xl mx-auto">
+          <div id="carousel" className="flex" style={{ animation: "slide 24s infinite ease-in-out" }}>
+            {[
+              {
+                nombre: "Eduardo Zurita",
+                texto: "Excelente atención, muy buena calidad, única en la zona y alrededores.",
+              },
+              {
+                nombre: "Marcelo Pérez",
+                texto:
+                  "Desde hace bastante tiempo buscaba un sillón mecedora... felizmente me encontré con La Chaucha del Algarrobo.",
+              },
+              {
+                nombre: "Maximiliano Meza",
+                texto:
+                  "Una experiencia maravillosa, la calidad, la terminación, realmente muebles de ensueño.",
+              },
+              {
+                nombre: "Federico Alfredo Francis",
+                texto: "Excelente atención y productos de primera calidad.",
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                className="min-w-full flex flex-col items-center justify-center space-y-4 bg-white p-10 rounded-3xl shadow-md"
+              >
+                <div className="flex items-center space-x-1 text-[#FFD700] text-2xl">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <img
+                  src="/assets/google-logo.svg"
+                  alt="Google Logo"
+                  className="w-8 h-8 mt-2 opacity-90"
+                />
+                <p className="text-lg italic text-[#3E2C22]">"{t.texto}"</p>
+                <p className="font-semibold text-[#3E2C22]">{t.nombre}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <img src="/assets/google-logo.svg" alt="Google Logo" className="w-8 h-8 mt-2 opacity-90" />
-        <p className="text-lg italic text-[#3E2C22]">"Excelente atención, muy buena calidad, única en la zona y alrededores."</p>
-        <p className="font-semibold text-[#3E2C22]">Eduardo Zurita</p>
-      </div>
 
-      {/* Reseña 2 */}
-      <div className="min-w-full flex flex-col items-center justify-center space-y-4 bg-white p-10 rounded-3xl shadow-md">
-        <div className="flex items-center space-x-1 text-[#FFD700] text-2xl">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        <div className="flex justify-center items-center mt-8 text-gray-600 text-sm">
+          <img src="/assets/google-logo.svg" alt="Google Logo" className="w-5 h-5 mr-2" />
+          <span>Verificado por Google</span>
         </div>
-        <img src="/assets/google-logo.svg" alt="Google Logo" className="w-8 h-8 mt-2 opacity-90" />
-        <p className="text-lg italic text-[#3E2C22]">
-          "Desde hace bastante tiempo buscaba un sillón mecedora... fue así como felizmente me encontré con La Chaucha del Algarrobo."
-        </p>
-        <p className="font-semibold text-[#3E2C22]">Marcelo Pérez</p>
-      </div>
 
-      {/* Reseña 3 */}
-      <div className="min-w-full flex flex-col items-center justify-center space-y-4 bg-white p-10 rounded-3xl shadow-md">
-        <div className="flex items-center space-x-1 text-[#FFD700] text-2xl">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <img src="/assets/google-logo.svg" alt="Google Logo" className="w-8 h-8 mt-2 opacity-90" />
-        <p className="text-lg italic text-[#3E2C22]">
-          "Una experiencia maravillosa, la calidad, la terminación, realmente muebles de ensueño."
-        </p>
-        <p className="font-semibold text-[#3E2C22]">Maximiliano Meza</p>
-      </div>
-
-      {/* Reseña 4 */}
-      <div className="min-w-full flex flex-col items-center justify-center space-y-4 bg-white p-10 rounded-3xl shadow-md">
-        <div className="flex items-center space-x-1 text-[#FFD700] text-2xl">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <img src="/assets/google-logo.svg" alt="Google Logo" className="w-8 h-8 mt-2 opacity-90" />
-        <p className="text-lg italic text-[#3E2C22]">
-          "Excelente atención y productos de primera calidad."
-        </p>
-        <p className="font-semibold text-[#3E2C22]">Federico Alfredo Francis</p>
-      </div>
-    </div>
-  </div>
-
-  {/* Texto "Verificado por Google" */}
-  <div className="flex justify-center items-center mt-8 text-gray-600 text-sm">
-    <img src="/assets/google-logo.svg" alt="Google Logo" className="w-5 h-5 mr-2" />
-    <span>Verificado por Google</span>
-  </div>
-
-  {/* Animación del carrusel */}
-  <style jsx>{`
-    @keyframes slide {
-      0%, 20% { transform: translateX(0); }
-      25%, 45% { transform: translateX(-100%); }
-      50%, 70% { transform: translateX(-200%); }
-      75%, 95% { transform: translateX(-300%); }
-      100% { transform: translateX(0); }
-    }
-  `}</style>
-</section>
+        <style jsx>{`
+          @keyframes slide {
+            0%, 20% { transform: translateX(0); }
+            25%, 45% { transform: translateX(-100%); }
+            50%, 70% { transform: translateX(-200%); }
+            75%, 95% { transform: translateX(-300%); }
+            100% { transform: translateX(0); }
+          }
+          #carousel {
+            display: flex;
+          }
+        `}</style>
+      </section>
 
       {/* CTA FINAL */}
       <section className="text-center bg-[#EDE8E1] py-16 sm:py-24 px-4 sm:px-6">
@@ -236,35 +192,19 @@ export default function Home() {
 
       <style jsx>{`
         @keyframes marquee {
-          0% {
-            transform: translateX(100%);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
         }
         .animate-marquee {
           display: inline-block;
           animation: marquee linear infinite;
         }
-
         @keyframes glow {
-          0% {
-            box-shadow: 0 0 5px #f8e37d, 0 0 15px #ffd700;
-            transform: scale(1);
-          }
-          50% {
-            box-shadow: 0 0 15px #ffe066, 0 0 30px #ffd700;
-            transform: scale(1.05);
-          }
-          100% {
-            box-shadow: 0 0 5px #f8e37d, 0 0 15px #ffd700;
-            transform: scale(1);
-          }
+          0% { box-shadow: 0 0 5px #f8e37d, 0 0 15px #ffd700; transform: scale(1); }
+          50% { box-shadow: 0 0 15px #ffe066, 0 0 30px #ffd700; transform: scale(1.05); }
+          100% { box-shadow: 0 0 5px #f8e37d, 0 0 15px #ffd700; transform: scale(1); }
         }
-        .animate-glow {
-          animation: glow 2.5s ease-in-out infinite;
-        }
+        .animate-glow { animation: glow 2.5s ease-in-out infinite; }
       `}</style>
     </main>
   );

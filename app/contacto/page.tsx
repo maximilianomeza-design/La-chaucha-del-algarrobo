@@ -9,7 +9,7 @@ export default function Contacto() {
       {/* IMAGEN DE CABECERA */}
       <section className="relative w-full h-[60vh] overflow-hidden">
         <img
-          src="/assets/historia-escena5.webp"
+          src="/assets/detalles-taller-hero.webp"
           alt="Taller y muebles de La Chaucha del Algarrobo"
           className="w-full h-full object-cover brightness-[0.7]"
         />

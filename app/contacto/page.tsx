@@ -60,31 +60,72 @@ export default function Contacto() {
   };
 
   return (
-    <main className="min-h-screen bg-[#F8F6F2] text-[#1C1C1C] pt-32 pb-24 px-6 max-w-6xl mx-auto">
-      <h2 className="text-4xl font-serif text-center text-[#3E2C22] mb-10">
-        Contacto
-      </h2>
+    <main className="min-h-screen bg-[#F8F6F2] text-[#1C1C1C] pt-32 pb-24">
+      {/* ENCABEZADO CON IMAGEN */}
+      <section className="relative w-full h-[40vh] md:h-[50vh] overflow-hidden">
+        <img
+          src="/assets/historia-escena5.webp"
+          alt="La Chaucha del Algarrobo - Fábrica"
+          className="absolute inset-0 w-full h-full object-cover brightness-[0.75]"
+        />
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-6">
+          <h2 className="text-4xl md:text-5xl font-serif drop-shadow-lg mb-4">
+            Contacto
+          </h2>
+          <p className="max-w-2xl text-lg md:text-xl drop-shadow-md">
+            Desde el corazón del Chaco, creamos muebles que se adaptan a vos.  
+            Contanos tu idea y la hacemos realidad.
+          </p>
+        </div>
+      </section>
 
-      <p className="text-center text-[#4A4A4A] max-w-3xl mx-auto mb-12">
-        Si buscás algo más que un mueble estándar, estás en el lugar correcto.  
-        Podés adjuntar una foto o un plano de tu ambiente si querés pedir un mueble a medida.  
-        Nuestro equipo se pondrá en contacto para ayudarte a diseñar el mueble ideal.
-      </p>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-        {/* IMAGEN INFORMATIVA */}
-        <div className="flex justify-center items-center order-1 md:order-none">
-          <img
-            src="/assets/historia-escena5.webp"
-            alt="Fábrica La Chaucha del Algarrobo"
-            className="rounded-2xl shadow-lg w-full object-cover bg-[#EDE8E1]"
-          />
+      {/* CONTENIDO PRINCIPAL */}
+      <section className="max-w-6xl mx-auto mt-20 px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        {/* TEXTO IZQUIERDA */}
+        <div className="text-[#3E2C22] space-y-6">
+          <h3 className="text-3xl font-serif mb-4">Hablá con nosotros</h3>
+          <p className="text-[#4A4A4A] leading-relaxed">
+            Si buscás algo más que un mueble estándar, estás en el lugar correcto.  
+            Podés adjuntar una foto o un plano de tu ambiente si querés pedir un mueble a medida(NO tiene que ser profesional).  
+            Nuestro equipo se pondrá en contacto para ayudarte a diseñar el mueble ideal.
+          </p>
+          <p className="text-[#4A4A4A] leading-relaxed">
+            También podés comunicarte por cualquiera de nuestros canales directos:  
+          </p>
+          <ul className="space-y-3">
+            <li>
+              <a
+                href="https://wa.me/5493734483830"
+                target="_blank"
+                className="hover:text-[#5B4636] transition"
+              >
+                💬 WhatsApp: +54 9 3734 483830
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:lachaucha2020@gmail.com"
+                className="hover:text-[#5B4636] transition"
+              >
+                ✉️ contacto lachaucha2020@gmail.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/lachauchadelalgarrobo"
+                target="_blank"
+                className="hover:text-[#5B4636] transition"
+              >
+                📷 @lachauchadelalgarrobo
+              </a>
+            </li>
+          </ul>
         </div>
 
-        {/* FORMULARIO */}
+        {/* FORMULARIO DERECHA */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white border border-[#E5E1DA] rounded-2xl p-8 shadow-sm space-y-6 order-2 md:order-none"
+          className="bg-white border border-[#E5E1DA] rounded-2xl p-8 shadow-sm space-y-6"
         >
           <div>
             <label className="block text-sm font-medium text-[#3E2C22] mb-2">
@@ -142,9 +183,11 @@ export default function Contacto() {
             Enviar mensaje
           </button>
 
-          {status && <p className="mt-4 text-center text-[#3E2C22]">{status}</p>}
+          {status && (
+            <p className="mt-4 text-center text-[#3E2C22]">{status}</p>
+          )}
         </form>
-      </div>
+      </section>
     </main>
   );
 }

@@ -72,8 +72,20 @@ export default function Contacto() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        {/* IMAGEN INFORMATIVA */}
+        <div className="flex justify-center items-center order-1 md:order-none">
+          <img
+            src="/assets/historia-escena5.webp"
+            alt="Fábrica La Chaucha del Algarrobo"
+            className="rounded-2xl shadow-lg w-full object-cover bg-[#EDE8E1]"
+          />
+        </div>
+
         {/* FORMULARIO */}
-        <form onSubmit={handleSubmit} className="bg-white border border-[#E5E1DA] rounded-2xl p-8 shadow-sm space-y-6">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white border border-[#E5E1DA] rounded-2xl p-8 shadow-sm space-y-6 order-2 md:order-none"
+        >
           <div>
             <label className="block text-sm font-medium text-[#3E2C22] mb-2">
               Nombre completo
@@ -132,15 +144,6 @@ export default function Contacto() {
 
           {status && <p className="mt-4 text-center text-[#3E2C22]">{status}</p>}
         </form>
-
-        {/* IMAGEN INFORMATIVA */}
-        <div className="flex justify-center items-center">
-          <img
-            src="/assets/historia-escena5.webp"
-            alt="Fábrica La Chaucha del Algarrobo"
-            className="rounded-2xl shadow-lg w-full object-cover"
-          />
-        </div>
       </div>
     </main>
   );

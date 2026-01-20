@@ -64,7 +64,7 @@ export default function Contacto() {
       {/* ENCABEZADO CON IMAGEN */}
       <section className="relative w-full h-[40vh] md:h-[50vh] overflow-hidden">
         <img
-          src="/assets/historia-escena5.webp"
+          src="/assets/detalles-taller-hero.webp"
           alt="La Chaucha del Algarrobo - Fábrica"
           className="absolute inset-0 w-full h-full object-cover brightness-[0.75]"
         />
@@ -86,7 +86,7 @@ export default function Contacto() {
           <h3 className="text-3xl font-serif mb-4">Hablá con nosotros</h3>
           <p className="text-[#4A4A4A] leading-relaxed">
             Si buscás algo más que un mueble estándar, estás en el lugar correcto.  
-            Podés adjuntar una foto o un plano de tu ambiente si querés pedir un mueble a medida(NO tiene que ser profesional).  
+            Podés adjuntar una foto o un plano de tu ambiente si querés pedir un mueble a medida (NO tiene que ser profesional).  
             Nuestro equipo se pondrá en contacto para ayudarte a diseñar el mueble ideal.
           </p>
           <p className="text-[#4A4A4A] leading-relaxed">
@@ -107,7 +107,7 @@ export default function Contacto() {
                 href="mailto:lachaucha2020@gmail.com"
                 className="hover:text-[#5B4636] transition"
               >
-                ✉️ contacto lachaucha2020@gmail.com
+                ✉️ email lachaucha2020@gmail.com
               </a>
             </li>
             <li>

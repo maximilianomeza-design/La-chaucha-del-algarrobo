@@ -166,7 +166,7 @@ export default function Home() {
 
       {/* BOTÓN WHATSAPP */}
       <a
-        href="https://wa.me/543743511582"
+        href="https://wa.me/543734445112"
         target="_blank"
         className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 bg-[#25D366] text-white p-3 sm:p-4 rounded-full shadow-lg hover:bg-[#20ba5a] transition z-50"
         aria-label="Contactar por WhatsApp"

@@ -2,15 +2,15 @@ import "./globals.css";
 import Header from "./components/Header";
 
 export const metadata = {
-  title: "La Chaucha del Algarrobo | Muebles de diseño argentino",
+  title: "Origen Algarrobo — by La Chaucha | Muebles de diseño artesanal",
   description:
-    "Muebles de madera maciza que combinan tradición artesanal, diseño contemporáneo y producción sustentable. Hecho en Chaco, pensado para todo el país.",
+    "Origen Algarrobo es la línea premium de La Chaucha: muebles de algarrobo macizo, diseño artesanal contemporáneo y producción consciente. Línea Nova con laca semibrillante, herrajes telescópicos y cierre suave. Hecho en Chaco, a medida para todo el país.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className="antialiased bg-[#F8F6F2] text-[#3E2C22]">
+      <body className="antialiased bg-[#FAF7F3] text-[#241A14]">
         {/* HEADER FIJO */}
         <Header />
 
@@ -18,33 +18,50 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="pt-20">{children}</main>
 
         {/* FOOTER */}
-        <footer className="bg-[#EDE8E1] text-center py-10 mt-20 text-[#3E2C22]">
+        <footer className="bg-[#F3EEE7] border-t border-[#241A14]/10 text-center py-12 mt-24 text-[#241A14]">
+          {/* Marca */}
           <img
             src="/assets/logo-la-chaucha.webp"
             alt="La Chaucha del Algarrobo"
-            className="h-12 mx-auto mb-4"
+            className="h-12 mx-auto mb-4 opacity-90"
+            loading="lazy"
           />
-          <p className="mb-2">Hecho en Chaco. Pensado para todo el país.</p>
-          <div className="flex justify-center gap-6 mt-4">
+
+          <p className="mb-2 text-sm sm:text-base text-[#3A2B23]/80">
+            Origen Algarrobo — by La Chaucha
+          </p>
+
+          <p className="text-sm text-[#6A564A]">
+            Hecho en Chaco. Pensado para todo el país.
+          </p>
+
+          {/* Links */}
+          <div className="flex justify-center gap-6 mt-6 text-sm">
             <a
               href="https://www.instagram.com/lachauchadelalgarrobo/"
               target="_blank"
-              className="hover:text-[#5B4636] transition"
+              rel="noreferrer"
+              className="hover:text-[#2F221B] transition"
             >
               Instagram
             </a>
             <a
               href="https://wa.me/543743511582"
               target="_blank"
-              className="hover:text-[#5B4636] transition"
+              rel="noreferrer"
+              className="hover:text-[#2F221B] transition"
             >
               WhatsApp
             </a>
-            <a href="/contacto" className="hover:text-[#5B4636] transition">
+            <a
+              href="/contacto"
+              className="hover:text-[#2F221B] transition"
+            >
               Contacto
             </a>
           </div>
-          <p className="text-sm text-[#7A7A7A] mt-6">
+
+          <p className="text-xs text-[#6A564A]/70 mt-8">
             © {new Date().getFullYear()} La Chaucha del Algarrobo. Todos los derechos reservados.
           </p>
         </footer>

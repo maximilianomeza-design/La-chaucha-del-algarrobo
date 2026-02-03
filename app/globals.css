@@ -2,38 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* -------------------------------------------------------
-   GLOBALS — Origen Algarrobo (editorial / revista)
-   Objetivo: neutral + premium, sin pisar Tailwind
--------------------------------------------------------- */
-
-/* 1) Base: dejamos que layout/componentes definan colores.
-   No forzamos background/color global para evitar conflictos. */
+/* GLOBALS — Editorial premium (sin pisar Tailwind) */
 html,
 body {
   scroll-behavior: smooth;
 }
 
-/* 2) Tipografía base: mantenemos Inter (cuerpo),
-   pero mejoramos render y ritmo para lectura premium. */
 body {
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* Ritmo editorial */
   line-height: 1.55;
 }
 
-/* 3) Headings: si NO cargás una serif por next/font todavía,
-   no forzamos una nueva fuente acá.
-   Pero sí mejoramos el “feeling” con tracking/kerning. */
+/* Títulos: ritmo editorial (la fuente la da font-serif) */
 h1, h2, h3 {
   letter-spacing: -0.01em;
 }
 
-/* 4) Links & botones: transiciones específicas (no "all") */
+/* Transiciones premium (no "all") */
 a,
 button {
   transition-property: color, background-color, border-color, opacity, transform, box-shadow;
@@ -41,20 +29,17 @@ button {
   transition-timing-function: ease;
 }
 
-/* 5) Imágenes: correcto para responsive */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* 6) Focus accesible (se nota premium cuando está bien resuelto) */
 :focus-visible {
-  outline: 2px solid rgba(36, 26, 20, 0.22); /* #241A14 suave */
+  outline: 2px solid rgba(36, 26, 20, 0.22);
   outline-offset: 3px;
 }
 
-/* 7) Respeta usuarios con reducción de movimiento */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
@@ -63,3 +48,4 @@ img {
     scroll-behavior: auto !important;
   }
 }
+

@@ -15,27 +15,61 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#F8F6F2]/95 shadow-md backdrop-blur" : "bg-transparent"
+        scrolled
+          ? "bg-[#FAF7F3]/95 backdrop-blur border-b border-[#241A14]/10"
+          : "bg-transparent"
       }`}
     >
       <nav className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
-        <Link href="/" className="flex items-center gap-2">
+        {/* Marca */}
+        <Link href="/" className="flex items-center gap-3">
           <img
             src="/assets/logo-la-chaucha.webp"
-            alt="La Chaucha del Algarrobo"
-            className="h-10 w-auto"
+            alt="Origen Algarrobo by La Chaucha"
+            className="h-9 w-auto"
           />
-          <span className="font-serif text-[#3E2C22] text-lg hidden sm:inline">
-            La Chaucha del Algarrobo
-          </span>
+          <div className="leading-tight hidden sm:block">
+            <span className="block font-serif text-[#241A14] text-base">
+              Origen Algarrobo
+            </span>
+            <span className="block text-[11px] tracking-[0.22em] uppercase text-[#6A564A]">
+              by La Chaucha
+            </span>
+          </div>
         </Link>
 
-        <div className="flex gap-6 text-[#3E2C22] font-medium">
-          <Link href="/">Inicio</Link>
-          <Link href="/catalogo">Catálogo</Link>
-          <Link href="/fabrica">La Fábrica</Link>
-          <Link href="/sustentabilidad">Sustentabilidad</Link>
-          <Link href="/contacto">Contacto</Link>
+        {/* Navegación */}
+        <div className="flex gap-6 text-sm text-[#241A14]/90">
+          <Link
+            href="/"
+            className="hover:text-[#241A14] transition"
+          >
+            Inicio
+          </Link>
+          <Link
+            href="/catalogo"
+            className="hover:text-[#241A14] transition"
+          >
+            Catálogo
+          </Link>
+          <Link
+            href="/fabrica"
+            className="hover:text-[#241A14] transition"
+          >
+            La Fábrica
+          </Link>
+          <Link
+            href="/sustentabilidad"
+            className="hover:text-[#241A14] transition"
+          >
+            Sustentabilidad
+          </Link>
+          <Link
+            href="/contacto"
+            className="hover:text-[#241A14] transition"
+          >
+            Contacto
+          </Link>
         </div>
       </nav>
     </header>

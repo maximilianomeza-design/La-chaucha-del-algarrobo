@@ -20,8 +20,8 @@ export default function Home() {
 
   return (
     <main className="relative overflow-hidden bg-origen-sand text-origen-ink">
-      {/* HERO DESLIZANTE — Jerarquía corregida (marca clara, H1 no invade) */}
-      <section className="relative h-[86vh] sm:h-[72vh] w-full overflow-hidden">
+      {/* HERO DESLIZANTE */}
+      <section className="relative h-[78vh] sm:h-[66vh] w-full overflow-hidden">
         {heroImages.map((image, index) => (
           <div
             key={index}
@@ -36,13 +36,13 @@ export default function Home() {
               loading={index === 0 ? "eager" : "lazy"}
             />
 
-            {/* Overlay más controlado: legible sin “lavar” ni oscurecer de más */}
+            {/* Overlay controlado */}
             <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/35 to-white/70" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.70),rgba(255,255,255,0)_55%)]" />
 
             <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 sm:px-6">
-              {/* Marca arriba y legible (no perdida) */}
-              <div className="mb-6 sm:mb-8">
+              {/* Marca arriba */}
+              <div className="mb-5 sm:mb-7">
                 <p className="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-origen-clay">
                   Origen Algarrobo
                 </p>
@@ -51,32 +51,22 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* H1 menos “gigante”, más revista */}
-              <h1 className="max-w-4xl text-4xl sm:text-5xl md:text-6xl leading-[1.04] font-serif text-origen-ink">
+              {/* H1 real */}
+              <h1 className="max-w-4xl font-serif text-origen-ink text-4xl sm:text-5xl md:text-6xl leading-[1.02]">
                 Muebles de algarrobo
-                <span className="block">La esencia del monte, decorando tu casa..</span>
               </h1>
 
-              {/* Copy emocional (no ficha técnica) */}
+              {/* Subtítulo 30% más chico (separado del H1) */}
+              <h2 className="mt-3 max-w-3xl font-serif text-origen-ink/85 text-2xl sm:text-3xl md:text-4xl leading-[1.12]">
+                La esencia del monte, decorando tu casa.
+              </h2>
+
+              {/* Copy (se puede pulir después, pero ya no invade) */}
               <p className="mt-5 sm:mt-6 max-w-2xl text-base sm:text-lg text-origen-ink/75">
-                Calidad sin concesiones - Diseño con identidad Argentina - Tecnología aplicada al confort y la estética
+                Calidad sin concesiones · Diseño con identidad argentina · Tecnología aplicada al confort y la estética
               </p>
 
-              {/* Bullets técnicos discretos (sin invadir) */}
-              <div className="mt-4 sm:mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xs sm:text-sm text-origen-clay">
-                <span className="rounded-full border border-origen-ink/10 bg-white/60 px-3 py-1">
-                  Línea Nova
-                </span>
-                <span className="rounded-full border border-origen-ink/10 bg-white/60 px-3 py-1">
-                  Terminacion en laca.
-                </span>
-                <span className="rounded-full border border-origen-ink/10 bg-white/60 px-3 py-1">
-                  Herrajes telescópicos
-                </span>
-                <span className="rounded-full border border-origen-ink/10 bg-white/60 px-3 py-1">
-                  Cierre suave
-                </span>
-              </div>
+              {/* ❌ Eliminados los chips/botoncitos técnicos */}
 
               <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
@@ -91,11 +81,11 @@ export default function Home() {
                   href="/fabrica"
                   className="inline-flex items-center justify-center rounded-2xl border border-origen-ink/15 bg-white/65 px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-medium text-origen-ink shadow-sm transition hover:bg-white/80 hover:translate-y-[-1px] focus:outline-none focus:ring-2 focus:ring-origen-ink/15"
                 >
-                  Nuestra fabrica
+                  Nuestra fábrica
                 </a>
               </div>
 
-              {/* Sacamos el texto “tipo casa de ropa”. Si querés un remate, que sea premium y legible */}
+              {/* Si lo querés, lo dejamos; si te sigue sonando “retail”, lo sacamos también */}
               <p className="mt-6 sm:mt-8 text-xs sm:text-sm text-origen-clay/85">
                 Asesoramiento a medida · Medidas exactas · Terminación premium
               </p>
@@ -103,7 +93,7 @@ export default function Home() {
           </div>
         ))}
 
-        {/* Indicadores discretos */}
+        {/* Indicadores */}
         <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-20">
           {heroImages.map((_, i) => (
             <button
@@ -118,7 +108,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PIEZA DESTACADA — “Curaduría Nova” eliminado. Copy y etiqueta con sentido */}
+      {/* PIEZA DESTACADA */}
       <section className="relative py-16 sm:py-24 px-4 sm:px-6 bg-origen-sand">
         <div className="mx-auto max-w-5xl">
           <div className="flex items-end justify-between gap-6">
@@ -131,7 +121,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Badge con significado real */}
             <div className="hidden sm:flex items-center gap-2 rounded-full border border-origen-ink/10 bg-white/65 px-4 py-2 text-xs tracking-[0.22em] uppercase text-origen-clay">
               Colección Nova
             </div>
@@ -148,12 +137,10 @@ export default function Home() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-origen-ink/20 via-transparent to-white/25" />
 
-              {/* Etiqueta superior izquierda (sutil, ok) */}
               <span className="absolute top-5 left-5 rounded-full bg-white/80 px-4 py-2 text-xs sm:text-sm font-medium text-origen-ink backdrop-blur">
                 Detalle de terminación
               </span>
 
-              {/* Caja editorial inferior: sin repetir el copy del hero, sin ficha técnica */}
               <div className="absolute bottom-0 left-0 w-full p-5 sm:p-7">
                 <div className="max-w-3xl rounded-2xl bg-white/75 backdrop-blur px-5 sm:px-6 py-4 border border-origen-ink/10">
                   <p className="text-sm sm:text-base text-origen-ink font-medium">
@@ -186,7 +173,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RESEÑAS — no cambio estructura, solo mantengo tono (si querés luego pulimos aún más) */}
+      {/* RESEÑAS */}
       <section className="py-20 sm:py-24 bg-origen-sand text-center relative overflow-hidden">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <h2 className="text-3xl sm:text-4xl font-serif mb-10 sm:mb-14 text-origen-ink">
@@ -196,24 +183,10 @@ export default function Home() {
           <div className="relative w-full max-w-3xl mx-auto">
             <div id="carousel" className="flex animate-slide">
               {[
-                {
-                  nombre: "Eduardo Zurita",
-                  texto: "Excelente atención, muy buena calidad, única en la zona y alrededores.",
-                },
-                {
-                  nombre: "Marcelo Pérez",
-                  texto:
-                    "Desde hace bastante tiempo buscaba un sillón mecedora... felizmente me encontré con La Chaucha del Algarrobo.",
-                },
-                {
-                  nombre: "Maximiliano Meza",
-                  texto:
-                    "Una experiencia maravillosa, la calidad, la terminación, realmente muebles de ensueño.",
-                },
-                {
-                  nombre: "Federico Alfredo Francis",
-                  texto: "Excelente atención y productos de primera calidad.",
-                },
+                { nombre: "Eduardo Zurita", texto: "Excelente atención, muy buena calidad, única en la zona y alrededores." },
+                { nombre: "Marcelo Pérez", texto: "Desde hace bastante tiempo buscaba un sillón mecedora... felizmente me encontré con La Chaucha del Algarrobo." },
+                { nombre: "Maximiliano Meza", texto: "Una experiencia maravillosa, la calidad, la terminación, realmente muebles de ensueño." },
+                { nombre: "Federico Alfredo Francis", texto: "Excelente atención y productos de primera calidad." },
               ].map((t, i) => (
                 <div
                   key={i}
@@ -224,20 +197,13 @@ export default function Home() {
                   </div>
 
                   <div className="flex items-center gap-2 opacity-80">
-                    <img
-                      src="/assets/google-logo.svg"
-                      alt="Google Logo"
-                      className="w-6 h-6"
-                      loading="lazy"
-                    />
+                    <img src="/assets/google-logo.svg" alt="Google Logo" className="w-6 h-6" loading="lazy" />
                     <span className="text-xs tracking-[0.18em] uppercase text-origen-clay">
                       Reseña verificada
                     </span>
                   </div>
 
-                  <p className="text-base sm:text-lg italic text-origen-ink/90">
-                    “{t.texto}”
-                  </p>
+                  <p className="text-base sm:text-lg italic text-origen-ink/90">“{t.texto}”</p>
                   <p className="font-medium text-origen-ink">{t.nombre}</p>
                 </div>
               ))}
@@ -251,7 +217,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA FINAL — copy emocional, no técnico */}
+      {/* CTA FINAL */}
       <section className="text-center bg-origen-dune py-16 sm:py-24 px-4 sm:px-6 border-t border-origen-ink/10">
         <h2 className="text-2xl sm:text-3xl font-serif text-origen-ink">
           Piezas únicas, creadas para durar.
@@ -280,7 +246,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* WhatsApp — lo dejamos sobrio */}
+      {/* WhatsApp */}
       <a
         href="https://wa.me/543734445112"
         target="_blank"

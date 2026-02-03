@@ -21,9 +21,10 @@ module.exports = {
          - cambiamos serif a una “editorial” contemporánea (menos boda, más revista)
          Nota: la fuente real la cargamos con next/font en layout.tsx */
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        serif: ["Spectral", "ui-serif", "Georgia", "serif"],
-      },
+  sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+  serif: ["var(--font-spectral)", "ui-serif", "Georgia", "serif"],
+},
+
 
       /* Tokens editorial premium */
       letterSpacing: {

@@ -3,13 +3,10 @@ import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Home() {
-  // Mantengo la variable para no romper tu lógica actual, pero en premium evitamos el “urgency” agresivo.
-  const mostrarUltimasUnidades = false;
-
   const heroImages = [
     { src: "/assets/placard-hero.webp", alt: "Placard Línea Nova" },
     { src: "/assets/detalles-taller-hero.webp", alt: "Detalle artesanal en algarrobo" },
-    { src: "/assets/showroom-editado.webp", alt: "Showroom de muebles premium" },
+    { src: "/assets/showroom-editado.webp", alt: "Showroom Origen Algarrobo" },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -22,8 +19,8 @@ export default function Home() {
   }, [heroImages.length]);
 
   return (
-    <main className="relative overflow-hidden bg-[#FAF7F3] text-[#2B201A]">
-      {/* HERO DESLIZANTE — Identidad editorial (más claro, premium, enamorador) */}
+    <main className="relative overflow-hidden bg-origen-sand text-origen-ink">
+      {/* HERO DESLIZANTE — Jerarquía corregida (marca clara, H1 no invade) */}
       <section className="relative h-[86vh] sm:h-[72vh] w-full overflow-hidden">
         {heroImages.map((image, index) => (
           <div
@@ -39,36 +36,52 @@ export default function Home() {
               loading={index === 0 ? "eager" : "lazy"}
             />
 
-            {/* Overlay editorial: gradiente suave + “velo” cálido (sin oscurecer agresivo) */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/35 to-[#FAF7F3]/70" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.65),rgba(255,255,255,0)_55%)]" />
+            {/* Overlay más controlado: legible sin “lavar” ni oscurecer de más */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/35 to-white/70" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.70),rgba(255,255,255,0)_55%)]" />
 
-            {/* Contenido */}
             <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 sm:px-6">
-              {/* Marca / firma (sin depender todavía del archivo de logo) */}
+              {/* Marca arriba y legible (no perdida) */}
               <div className="mb-6 sm:mb-8">
-                <p className="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-[#4A3A31]/80">
-                  ORIGEN ALGARROBO
+                <p className="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-origen-clay">
+                  Origen Algarrobo
                 </p>
-                <p className="mt-1 text-[11px] sm:text-xs tracking-[0.22em] uppercase text-[#6A564A]/70">
+                <p className="mt-1 text-[11px] sm:text-xs tracking-[0.22em] uppercase text-origen-clay/80">
                   by La Chaucha
                 </p>
               </div>
 
-              <h1 className="max-w-4xl text-4xl sm:text-6xl md:text-7xl leading-[1.05] font-serif text-[#241A14]">
-                Nobleza natural,
-                <span className="block">diseño artesanal.</span>
+              {/* H1 menos “gigante”, más revista */}
+              <h1 className="max-w-4xl text-4xl sm:text-5xl md:text-6xl leading-[1.04] font-serif text-origen-ink">
+                Muebles de algarrobo
+                <span className="block">La esencia del monte, decorando tu casa..</span>
               </h1>
 
-              <p className="mt-5 sm:mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-[#3A2B23]/80">
-                Línea Nova en algarrobo macizo con laca semibrillante, herrajes telescópicos y cierre suave.
-                Diseño a medida, hecho para durar.
+              {/* Copy emocional (no ficha técnica) */}
+              <p className="mt-5 sm:mt-6 max-w-2xl text-base sm:text-lg text-origen-ink/75">
+                Calidad sin concesiones - Diseño con identidad Argentina - Tecnología aplicada al confort y la estética
               </p>
+
+              {/* Bullets técnicos discretos (sin invadir) */}
+              <div className="mt-4 sm:mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xs sm:text-sm text-origen-clay">
+                <span className="rounded-full border border-origen-ink/10 bg-white/60 px-3 py-1">
+                  Línea Nova
+                </span>
+                <span className="rounded-full border border-origen-ink/10 bg-white/60 px-3 py-1">
+                  Terminacion en laca.
+                </span>
+                <span className="rounded-full border border-origen-ink/10 bg-white/60 px-3 py-1">
+                  Herrajes telescópicos
+                </span>
+                <span className="rounded-full border border-origen-ink/10 bg-white/60 px-3 py-1">
+                  Cierre suave
+                </span>
+              </div>
 
               <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   href="/catalogo"
-                  className="group inline-flex items-center justify-center rounded-2xl bg-[#241A14] px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-medium text-[#FAF7F3] shadow-sm transition hover:translate-y-[-1px] hover:bg-[#2F221B] focus:outline-none focus:ring-2 focus:ring-[#241A14]/20"
+                  className="group inline-flex items-center justify-center rounded-2xl bg-origen-ink px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-medium text-origen-sand shadow-soft transition hover:translate-y-[-1px] hover:bg-origen-cocoa focus:outline-none focus:ring-2 focus:ring-origen-ink/20"
                 >
                   Ver Colección Nova
                   <span className="ml-2 opacity-70 transition group-hover:opacity-100">→</span>
@@ -76,15 +89,15 @@ export default function Home() {
 
                 <a
                   href="/fabrica"
-                  className="inline-flex items-center justify-center rounded-2xl border border-[#241A14]/15 bg-white/55 px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-medium text-[#241A14] shadow-sm transition hover:bg-white/70 hover:translate-y-[-1px] focus:outline-none focus:ring-2 focus:ring-[#241A14]/15"
+                  className="inline-flex items-center justify-center rounded-2xl border border-origen-ink/15 bg-white/65 px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-medium text-origen-ink shadow-sm transition hover:bg-white/80 hover:translate-y-[-1px] focus:outline-none focus:ring-2 focus:ring-origen-ink/15"
                 >
-                  Conocer el oficio
+                  Nuestra fabrica
                 </a>
               </div>
 
-              {/* Nota editorial sutil */}
-              <p className="mt-6 sm:mt-8 text-xs sm:text-sm text-[#6A564A]/75">
-                Atención personalizada por diseñador · Asesoramiento y medidas · Envíos según zona
+              {/* Sacamos el texto “tipo casa de ropa”. Si querés un remate, que sea premium y legible */}
+              <p className="mt-6 sm:mt-8 text-xs sm:text-sm text-origen-clay/85">
+                Asesoramiento a medida · Medidas exactas · Terminación premium
               </p>
             </div>
           </div>
@@ -98,98 +111,85 @@ export default function Home() {
               aria-label={`Ir a imagen ${i + 1}`}
               onClick={() => setCurrentSlide(i)}
               className={`h-1.5 w-6 rounded-full transition ${
-                i === currentSlide ? "bg-[#241A14]/70" : "bg-[#241A14]/20 hover:bg-[#241A14]/35"
+                i === currentSlide ? "bg-origen-ink/60" : "bg-origen-ink/20 hover:bg-origen-ink/35"
               }`}
             />
           ))}
         </div>
       </section>
 
-      {/* BANNER (misma sección, nueva identidad): de “Oferta” a “Pieza destacada” */}
-      <section className="relative py-16 sm:py-24 px-4 sm:px-6 bg-[#FAF7F3]">
+      {/* PIEZA DESTACADA — “Curaduría Nova” eliminado. Copy y etiqueta con sentido */}
+      <section className="relative py-16 sm:py-24 px-4 sm:px-6 bg-origen-sand">
         <div className="mx-auto max-w-5xl">
           <div className="flex items-end justify-between gap-6">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-serif text-[#241A14]">
+              <h2 className="text-2xl sm:text-3xl font-serif text-origen-ink">
                 Pieza destacada
               </h2>
-              <p className="mt-2 text-sm sm:text-base text-[#3A2B23]/75 max-w-2xl">
-                Una selección editorial para inspirarte. Terminaciones cuidadas, líneas limpias y herrajes de primera.
+              <p className="mt-2 text-sm sm:text-base text-origen-ink/70 max-w-2xl">
+                Un ejemplo de terminación y presencia. Madera real, líneas limpias y una sensación de solidez que se nota.
               </p>
             </div>
 
-            {/* “Sello” premium sutil (sin rojo, sin dorado cliché) */}
-            <div className="hidden sm:flex items-center gap-2 rounded-full border border-[#241A14]/10 bg-white/60 px-4 py-2 text-xs tracking-[0.22em] uppercase text-[#6A564A]">
-              Curaduría Nova
+            {/* Badge con significado real */}
+            <div className="hidden sm:flex items-center gap-2 rounded-full border border-origen-ink/10 bg-white/65 px-4 py-2 text-xs tracking-[0.22em] uppercase text-origen-clay">
+              Colección Nova
             </div>
           </div>
 
-          <div className="mt-10 relative overflow-hidden rounded-[28px] border border-[#241A14]/10 bg-white shadow-sm">
+          <div className="mt-10 relative overflow-hidden rounded-[28px] border border-origen-ink/10 bg-white shadow-soft">
             <div className="relative">
               <img
                 src="/assets/catalogo/cocina/linea-clasica/Alacena-y-bajomesada-1.60-clasica-sin-fondo.webp"
-                alt="Pieza destacada (referencia de catálogo)"
+                alt="Pieza destacada"
                 className="w-full h-[320px] sm:h-[520px] object-cover"
                 loading="lazy"
               />
 
-              {/* Overlay editorial suave para legibilidad */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#241A14]/25 via-transparent to-white/35" />
+              <div className="absolute inset-0 bg-gradient-to-t from-origen-ink/20 via-transparent to-white/25" />
 
-              {/* Etiqueta superior izquierda (sutil) */}
-              <span className="absolute top-5 left-5 rounded-full bg-white/75 px-4 py-2 text-xs sm:text-sm font-medium text-[#241A14] backdrop-blur">
+              {/* Etiqueta superior izquierda (sutil, ok) */}
+              <span className="absolute top-5 left-5 rounded-full bg-white/80 px-4 py-2 text-xs sm:text-sm font-medium text-origen-ink backdrop-blur">
                 Detalle de terminación
               </span>
 
-              {/* Si alguna vez querés volver a “últimas unidades”, que sea premium: sin fuego ni brillos */}
-              {mostrarUltimasUnidades && (
-                <span className="absolute top-5 right-5 rounded-full border border-[#241A14]/15 bg-white/70 px-4 py-2 text-xs sm:text-sm font-semibold text-[#241A14] backdrop-blur">
-                  Disponibilidad limitada
-                </span>
-              )}
-
-              {/* Copy inferior editorial (sin marquee) */}
+              {/* Caja editorial inferior: sin repetir el copy del hero, sin ficha técnica */}
               <div className="absolute bottom-0 left-0 w-full p-5 sm:p-7">
-                <div className="max-w-3xl rounded-2xl bg-white/70 backdrop-blur px-5 sm:px-6 py-4 border border-[#241A14]/10">
-                  <p className="text-sm sm:text-base text-[#241A14] font-medium">
-                    Línea Nova · Laca semibrillante · Herrajes telescópicos · Cierre suave
+                <div className="max-w-3xl rounded-2xl bg-white/75 backdrop-blur px-5 sm:px-6 py-4 border border-origen-ink/10">
+                  <p className="text-sm sm:text-base text-origen-ink font-medium">
+                    Cuidamos la madera como si fuera única. Porque lo es.
                   </p>
-                  <p className="mt-1 text-xs sm:text-sm text-[#3A2B23]/75">
-                    Consultá medidas, combinaciones y plazos. Diseñado para tu espacio, hecho en algarrobo con respeto por la veta.
+                  <p className="mt-1 text-xs sm:text-sm text-origen-ink/70">
+                    Te ayudamos a definir medidas, proporciones y terminación para que el mueble se vea “de obra”, no “comprado”.
                   </p>
 
                   <div className="mt-4 flex flex-col sm:flex-row gap-3">
                     <a
                       href="/catalogo"
-                      className="inline-flex items-center justify-center rounded-xl bg-[#241A14] px-5 py-3 text-sm font-medium text-[#FAF7F3] transition hover:bg-[#2F221B]"
+                      className="inline-flex items-center justify-center rounded-xl bg-origen-ink px-5 py-3 text-sm font-medium text-origen-sand transition hover:bg-origen-cocoa"
                     >
                       Ver Colección Nova
                     </a>
                     <a
                       href="/contacto"
-                      className="inline-flex items-center justify-center rounded-xl border border-[#241A14]/15 bg-white/60 px-5 py-3 text-sm font-medium text-[#241A14] transition hover:bg-white/75"
+                      className="inline-flex items-center justify-center rounded-xl border border-origen-ink/15 bg-white/70 px-5 py-3 text-sm font-medium text-origen-ink transition hover:bg-white/85"
                     >
-                      Hablar con un diseñador
+                      Pedir asesoramiento
                     </a>
                   </div>
                 </div>
               </div>
 
-              {/* Link invisible (mantengo tu patrón) */}
-              <a
-                href="/catalogo"
-                className="absolute inset-0"
-                aria-label="Ver colección"
-              />
+              <a href="/catalogo" className="absolute inset-0" aria-label="Ver colección" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* CARRUSEL DE RESEÑAS — misma lógica, look más editorial */}
-      <section className="py-20 sm:py-24 bg-[#FAF7F3] text-center relative overflow-hidden">
+      {/* RESEÑAS — no cambio estructura, solo mantengo tono (si querés luego pulimos aún más) */}
+      <section className="py-20 sm:py-24 bg-origen-sand text-center relative overflow-hidden">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-serif mb-10 sm:mb-14 text-[#241A14]">
+          <h2 className="text-3xl sm:text-4xl font-serif mb-10 sm:mb-14 text-origen-ink">
             Lo que dicen nuestros clientes
           </h2>
 
@@ -217,9 +217,9 @@ export default function Home() {
               ].map((t, i) => (
                 <div
                   key={i}
-                  className="min-w-full flex flex-col items-center justify-center space-y-5 rounded-[28px] border border-[#241A14]/10 bg-white/70 backdrop-blur p-9 sm:p-11 shadow-sm"
+                  className="min-w-full flex flex-col items-center justify-center space-y-5 rounded-[28px] border border-origen-ink/10 bg-white/70 backdrop-blur p-9 sm:p-11 shadow-soft"
                 >
-                  <div className="flex items-center space-x-1 text-[#7A5A2E] text-xl">
+                  <div className="flex items-center space-x-1 text-origen-ink/70 text-xl">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                   </div>
 
@@ -230,70 +230,66 @@ export default function Home() {
                       className="w-6 h-6"
                       loading="lazy"
                     />
-                    <span className="text-xs tracking-[0.18em] uppercase text-[#6A564A]">
+                    <span className="text-xs tracking-[0.18em] uppercase text-origen-clay">
                       Reseña verificada
                     </span>
                   </div>
 
-                  <p className="text-base sm:text-lg italic text-[#241A14]/90">
+                  <p className="text-base sm:text-lg italic text-origen-ink/90">
                     “{t.texto}”
                   </p>
-                  <p className="font-medium text-[#241A14]">{t.nombre}</p>
+                  <p className="font-medium text-origen-ink">{t.nombre}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#241A14]/10 bg-white/60 px-4 py-2 text-xs text-[#6A564A]">
+          <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-origen-ink/10 bg-white/60 px-4 py-2 text-xs text-origen-clay">
             <img src="/assets/google-logo.svg" alt="Google Logo" className="w-4 h-4" loading="lazy" />
             <span>Verificado por Google</span>
           </div>
         </div>
       </section>
 
-      {/* CTA FINAL — premium, enamorador, a medida */}
-      <section className="text-center bg-[#F3EEE7] py-16 sm:py-24 px-4 sm:px-6 border-t border-[#241A14]/10">
-        <h2 className="text-2xl sm:text-3xl font-serif text-[#241A14]">
-          Diseñado para tu hogar. Hecho con algarrobo real.
+      {/* CTA FINAL — copy emocional, no técnico */}
+      <section className="text-center bg-origen-dune py-16 sm:py-24 px-4 sm:px-6 border-t border-origen-ink/10">
+        <h2 className="text-2xl sm:text-3xl font-serif text-origen-ink">
+          Piezas únicas, creadas para durar.
         </h2>
-        <p className="mt-3 text-[#3A2B23]/75 text-sm sm:text-base max-w-2xl mx-auto">
-          Línea Nova · laca semibrillante · herrajes telescópicos · cierre suave.
-          Te acompañamos con atención personalizada para definir medidas, estilo y terminación.
+        <p className="mt-3 text-origen-ink/70 text-sm sm:text-base max-w-2xl mx-auto">
+          El equilibrio perfecto entre elegancia y tradición.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
           <a
             href="/catalogo"
-            className="inline-flex items-center justify-center rounded-2xl bg-[#241A14] text-[#FAF7F3] px-7 sm:px-9 py-3.5 sm:py-4 transition hover:bg-[#2F221B] font-medium text-sm sm:text-base"
+            className="inline-flex items-center justify-center rounded-2xl bg-origen-ink text-origen-sand px-7 sm:px-9 py-3.5 sm:py-4 transition hover:bg-origen-cocoa font-medium text-sm sm:text-base"
           >
             Ver Colección Nova
           </a>
           <a
             href="/contacto"
-            className="inline-flex items-center justify-center rounded-2xl border border-[#241A14]/15 bg-white/60 px-7 sm:px-9 py-3.5 sm:py-4 transition hover:bg-white/75 font-medium text-sm sm:text-base text-[#241A14]"
+            className="inline-flex items-center justify-center rounded-2xl border border-origen-ink/15 bg-white/60 px-7 sm:px-9 py-3.5 sm:py-4 transition hover:bg-white/80 font-medium text-sm sm:text-base text-origen-ink"
           >
             Pedir asesoramiento
           </a>
         </div>
 
-        <p className="mt-6 text-xs sm:text-sm text-[#6A564A]/75">
+        <p className="mt-6 text-xs sm:text-sm text-origen-clay/80">
           Nobleza natural, diseño artesanal.
         </p>
       </section>
 
-      {/* BOTÓN WHATSAPP — mantengo pero lo hago más “premium” (sin verde chillón) */}
+      {/* WhatsApp — lo dejamos sobrio */}
       <a
         href="https://wa.me/543734445112"
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 bg-[#241A14] text-[#FAF7F3] p-3.5 sm:p-4 rounded-full shadow-lg hover:bg-[#2F221B] transition z-50 border border-white/10"
+        className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 bg-origen-ink text-origen-sand p-3.5 sm:p-4 rounded-full shadow-lift hover:bg-origen-cocoa transition z-50 border border-white/10"
         aria-label="Contactar por WhatsApp"
       >
         <FaWhatsapp size={24} className="sm:w-7 sm:h-7" />
       </a>
-
-      {/* Nota: tu animación animate-slide/animate-marquee/animate-glow quedan en tu CSS actual.
-          Acá eliminé marquee y glow porque no encajan con premium. */}
     </main>
   );
 }

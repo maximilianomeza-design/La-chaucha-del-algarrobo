@@ -36,57 +36,72 @@ export default function Home() {
               loading={index === 0 ? "eager" : "lazy"}
             />
 
-            {/* Overlay controlado (menos “lavado” porque ahora manda la placa) */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white/55 via-white/20 to-white/55" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.55),rgba(255,255,255,0)_55%)]" />
+            {/* Overlay general leve (no lava la foto) */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/10 to-white/35" />
 
-            {/* Centro */}
+            {/* Scrim LOCAL detrás del texto (no bloque) */}
             <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
-              {/* Placa editorial para legibilidad */}
-              <div className="w-full max-w-4xl text-center rounded-[28px] border border-origen-ink/12 bg-white/72 backdrop-blur-md shadow-soft px-6 py-10 sm:px-10 sm:py-12">
-                {/* Marca arriba */}
-                <div className="mb-5 sm:mb-7">
-                  <p className="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-origen-clay">
-                    Origen Algarrobo
-                  </p>
-                  <p className="mt-1 text-[11px] sm:text-xs tracking-[0.22em] uppercase text-origen-clay/80">
-                    by La Chaucha
-                  </p>
-                </div>
+              <div className="relative w-full max-w-4xl text-center">
+                {/* Neblina editorial solo para el área del texto */}
+                <div className="pointer-events-none absolute -inset-x-6 -inset-y-10 sm:-inset-x-10 sm:-inset-y-12 rounded-[36px] bg-white/45 backdrop-blur-[6px]" />
+                {/* Borde ultra sutil para que no parezca “cartel” */}
+                <div className="pointer-events-none absolute -inset-x-6 -inset-y-10 sm:-inset-x-10 sm:-inset-y-12 rounded-[36px] border border-origen-ink/10" />
 
-                {/* H1 real */}
-                <h1 className="max-w-4xl mx-auto font-serif text-origen-ink text-4xl sm:text-5xl md:text-6xl leading-[1.02]">
-                  Muebles de algarrobo
-                </h1>
+                {/* Contenido */}
+                <div className="relative px-2 sm:px-4 py-8 sm:py-10">
+                  {/* Marca arriba */}
+                  <div className="mb-5 sm:mb-7">
+                    <p className="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-origen-clay">
+                      Origen Algarrobo
+                    </p>
+                    <p className="mt-1 text-[11px] sm:text-xs tracking-[0.22em] uppercase text-origen-clay/80">
+                      by La Chaucha
+                    </p>
+                  </div>
 
-                {/* Subtítulo (30% más chico) */}
-                <h2 className="mt-3 max-w-2xl mx-auto font-serif text-origen-ink/80 text-2xl sm:text-3xl md:text-4xl leading-[1.12]">
-                  La esencia del monte, decorando tu casa.
-                </h2>
-
-                {/* Copy */}
-                <p className="mt-5 sm:mt-6 max-w-2xl mx-auto text-base sm:text-lg text-origen-ink/70">
-                  Calidad sin concesiones · Diseño con identidad argentina · Tecnología aplicada al confort y la estética
-                </p>
-
-                <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                  <a
-                    href="/catalogo"
-                    className="group inline-flex items-center justify-center rounded-2xl bg-origen-ink px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-medium text-origen-sand shadow-soft transition hover:translate-y-[-1px] hover:bg-origen-cocoa focus:outline-none focus:ring-2 focus:ring-origen-ink/20"
+                  {/* H1 real */}
+                  <h1
+                    className="max-w-4xl mx-auto font-serif text-origen-ink text-4xl sm:text-5xl md:text-6xl leading-[1.02]"
+                    style={{ textShadow: "0 10px 28px rgba(0,0,0,0.14)" }}
                   >
-                    Ver Colección Nova
-                    <span className="ml-2 opacity-70 transition group-hover:opacity-100">→</span>
-                  </a>
+                    Muebles de algarrobo
+                  </h1>
 
-                  <a
-                    href="/fabrica"
-                    className="inline-flex items-center justify-center rounded-2xl border border-origen-ink/15 bg-white/75 px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-medium text-origen-ink shadow-sm transition hover:bg-white/90 hover:translate-y-[-1px] focus:outline-none focus:ring-2 focus:ring-origen-ink/15"
+                  {/* Subtítulo más chico */}
+                  <h2
+                    className="mt-3 max-w-2xl mx-auto font-serif text-origen-ink/85 text-2xl sm:text-3xl md:text-4xl leading-[1.12]"
+                    style={{ textShadow: "0 10px 22px rgba(0,0,0,0.10)" }}
                   >
-                    Nuestra fábrica
-                  </a>
-                </div>
+                    La esencia del monte, decorando tu casa.
+                  </h2>
 
-                {/* ✅ Eliminado: texto pequeño del final */}
+                  {/* Copy */}
+                  <p
+                    className="mt-5 sm:mt-6 max-w-2xl mx-auto text-base sm:text-lg text-origen-ink/75"
+                    style={{ textShadow: "0 8px 16px rgba(0,0,0,0.08)" }}
+                  >
+                    Calidad sin concesiones · Diseño con identidad argentina · Tecnología aplicada al confort y la estética
+                  </p>
+
+                  <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                    <a
+                      href="/catalogo"
+                      className="group inline-flex items-center justify-center rounded-2xl bg-origen-ink px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-medium text-origen-sand shadow-soft transition hover:translate-y-[-1px] hover:bg-origen-cocoa focus:outline-none focus:ring-2 focus:ring-origen-ink/20"
+                    >
+                      Ver Colección Nova
+                      <span className="ml-2 opacity-70 transition group-hover:opacity-100">→</span>
+                    </a>
+
+                    <a
+                      href="/fabrica"
+                      className="inline-flex items-center justify-center rounded-2xl border border-origen-ink/15 bg-white/65 px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-medium text-origen-ink shadow-sm transition hover:bg-white/85 hover:translate-y-[-1px] focus:outline-none focus:ring-2 focus:ring-origen-ink/15"
+                    >
+                      Nuestra fábrica
+                    </a>
+                  </div>
+
+                  {/* ✅ Eliminado el texto pequeño del final */}
+                </div>
               </div>
             </div>
           </div>

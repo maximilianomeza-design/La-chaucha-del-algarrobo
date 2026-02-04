@@ -37,49 +37,46 @@ export default function Home() {
             />
 
             {/* Overlay general leve (no lava la foto) */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/10 to-white/35" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/10 to-white/30" />
 
-            {/* Scrim LOCAL detrás del texto (no bloque) */}
+            {/* CONTENIDO (SIN BLOQUE / SIN PLACA) */}
             <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
-              <div className="relative w-full max-w-4xl text-center">
-                {/* Neblina editorial solo para el área del texto */}
-                <div className="pointer-events-none absolute -inset-x-6 -inset-y-10 sm:-inset-x-10 sm:-inset-y-12 rounded-[36px] bg-white/45 backdrop-blur-[6px]" />
-                {/* Borde ultra sutil para que no parezca “cartel” */}
-                <div className="pointer-events-none absolute -inset-x-6 -inset-y-10 sm:-inset-x-10 sm:-inset-y-12 rounded-[36px] border border-origen-ink/10" />
+              <div className="relative w-full max-w-5xl text-center">
+                {/* HALO RADIAL (CÍRCULO) para contraste — evita “cuadrados” */}
+                <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+                  <div
+                    className="rounded-full h-[420px] w-[420px] sm:h-[520px] sm:w-[520px] md:h-[620px] md:w-[620px]"
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(255,255,255,0.80) 0%, rgba(255,255,255,0.52) 36%, rgba(255,255,255,0.00) 72%)",
+                    }}
+                  />
+                </div>
 
                 {/* Contenido */}
-                <div className="relative px-2 sm:px-4 py-8 sm:py-10">
+                <div className="px-2 sm:px-4 py-8 sm:py-10">
                   {/* Marca arriba */}
                   <div className="mb-5 sm:mb-7">
-                    <p className="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-origen-clay">
+                    <p className="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-origen-clay drop-shadow-[0_10px_18px_rgba(0,0,0,0.10)]">
                       Origen Algarrobo
                     </p>
-                    <p className="mt-1 text-[11px] sm:text-xs tracking-[0.22em] uppercase text-origen-clay/80">
+                    <p className="mt-1 text-[11px] sm:text-xs tracking-[0.22em] uppercase text-origen-clay/85 drop-shadow-[0_10px_18px_rgba(0,0,0,0.08)]">
                       by La Chaucha
                     </p>
                   </div>
 
                   {/* H1 real */}
-                  <h1
-                    className="max-w-4xl mx-auto font-serif text-origen-ink text-4xl sm:text-5xl md:text-6xl leading-[1.02]"
-                    style={{ textShadow: "0 10px 28px rgba(0,0,0,0.14)" }}
-                  >
+                  <h1 className="mx-auto font-serif text-origen-ink text-4xl sm:text-5xl md:text-6xl leading-[1.02] drop-shadow-[0_14px_28px_rgba(0,0,0,0.18)]">
                     Muebles de algarrobo
                   </h1>
 
                   {/* Subtítulo más chico */}
-                  <h2
-                    className="mt-3 max-w-2xl mx-auto font-serif text-origen-ink/85 text-2xl sm:text-3xl md:text-4xl leading-[1.12]"
-                    style={{ textShadow: "0 10px 22px rgba(0,0,0,0.10)" }}
-                  >
+                  <h2 className="mt-3 mx-auto max-w-3xl font-serif text-origen-ink/85 text-2xl sm:text-3xl md:text-4xl leading-[1.12] drop-shadow-[0_12px_22px_rgba(0,0,0,0.14)]">
                     La esencia del monte, decorando tu casa.
                   </h2>
 
                   {/* Copy */}
-                  <p
-                    className="mt-5 sm:mt-6 max-w-2xl mx-auto text-base sm:text-lg text-origen-ink/75"
-                    style={{ textShadow: "0 8px 16px rgba(0,0,0,0.08)" }}
-                  >
+                  <p className="mt-5 sm:mt-6 mx-auto max-w-2xl text-base sm:text-lg text-origen-ink/75 drop-shadow-[0_10px_18px_rgba(0,0,0,0.10)]">
                     Calidad sin concesiones · Diseño con identidad argentina · Tecnología aplicada al confort y la estética
                   </p>
 
@@ -211,7 +208,12 @@ export default function Home() {
                   </div>
 
                   <div className="flex items-center gap-2 opacity-80">
-                    <img src="/assets/google-logo.svg" alt="Google Logo" className="w-6 h-6" loading="lazy" />
+                    <img
+                      src="/assets/google-logo.svg"
+                      alt="Google Logo"
+                      className="w-6 h-6"
+                      loading="lazy"
+                    />
                     <span className="text-xs tracking-[0.18em] uppercase text-origen-clay">
                       Reseña verificada
                     </span>

@@ -20,6 +20,7 @@ export default function Home() {
 
   return (
     <main className="relative overflow-hidden bg-origen-sand text-origen-ink">
+      
       {/* HERO DESLIZANTE */}
       <section className="relative h-[78vh] sm:h-[66vh] w-full overflow-hidden">
         {heroImages.map((image, index) => (
@@ -36,54 +37,45 @@ export default function Home() {
               loading={index === 0 ? "eager" : "lazy"}
             />
 
-            {/* Overlay general leve (no lava la foto) */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/10 to-white/30" />
+            {/* Overlay institucional limpio */}
+            <div className="absolute inset-0 bg-black/25" />
 
-            {/* CONTENIDO (SIN BLOQUE / SIN PLACA) */}
+            {/* CONTENIDO */}
             <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
               <div className="relative w-full max-w-5xl text-center">
-                {/* HALO RADIAL (CÍRCULO) para contraste — evita “cuadrados” */}
-                <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-                  <div
-                    className="rounded-full h-[420px] w-[420px] sm:h-[520px] sm:w-[520px] md:h-[620px] md:w-[620px]"
-                    style={{
-                      background:
-                        "radial-gradient(circle, rgba(255,255,255,0.80) 0%, rgba(255,255,255,0.52) 36%, rgba(255,255,255,0.00) 72%)",
-                    }}
-                  />
-                </div>
-
-                {/* Contenido */}
-                <div className="px-2 sm:px-4 py-8 sm:py-10">
-                  {/* Marca arriba */}
-                  <div className="mb-5 sm:mb-7">
-                    <p className="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-origen-clay drop-shadow-[0_10px_18px_rgba(0,0,0,0.10)]">
+                
+                <div className="px-2 sm:px-4 py-8 sm:py-10 text-white">
+                  
+                  {/* Marca */}
+                  <div className="mb-6 sm:mb-8">
+                    <p className="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-white/80">
                       Origen Algarrobo
                     </p>
-                    <p className="mt-1 text-[11px] sm:text-xs tracking-[0.22em] uppercase text-origen-clay/85 drop-shadow-[0_10px_18px_rgba(0,0,0,0.08)]">
+                    <p className="mt-1 text-[11px] sm:text-xs tracking-[0.22em] uppercase text-white/60">
                       by La Chaucha
                     </p>
                   </div>
 
-                  {/* H1 real */}
-                  <h1 className="mx-auto font-serif text-origen-ink text-4xl sm:text-5xl md:text-6xl leading-[1.02] drop-shadow-[0_14px_28px_rgba(0,0,0,0.18)]">
+                  {/* H1 */}
+                  <h1 className="mx-auto font-serif text-4xl sm:text-5xl md:text-5xl tracking-[-0.02em] leading-[1.05]">
                     Muebles de algarrobo
                   </h1>
 
-                  {/* Subtítulo más chico */}
-                  <h2 className="mt-3 mx-auto max-w-3xl font-serif text-origen-ink/85 text-2xl sm:text-3xl md:text-4xl leading-[1.12] drop-shadow-[0_12px_22px_rgba(0,0,0,0.14)]">
+                  {/* Subtítulo */}
+                  <h2 className="mt-4 mx-auto max-w-3xl font-serif text-2xl sm:text-3xl md:text-4xl text-white/85 leading-[1.15]">
                     La esencia del monte, decorando tu casa.
                   </h2>
 
-                  {/* Copy */}
-                  <p className="mt-5 sm:mt-6 mx-auto max-w-2xl text-base sm:text-lg text-origen-ink/75 drop-shadow-[0_10px_18px_rgba(0,0,0,0.10)]">
-                    Calidad sin concesiones · Diseño con identidad argentina · Tecnología aplicada al confort y la estética
+                  {/* Copy institucional */}
+                  <p className="mt-6 mx-auto max-w-2xl text-base sm:text-lg text-white/80">
+                    Diseño cuidado. Producción propia. Madera real.
                   </p>
 
-                  <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                  {/* CTAs */}
+                  <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                     <a
                       href="/catalogo"
-                      className="group inline-flex items-center justify-center rounded-2xl bg-origen-ink px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-medium text-origen-sand shadow-soft transition hover:translate-y-[-1px] hover:bg-origen-cocoa focus:outline-none focus:ring-2 focus:ring-origen-ink/20"
+                      className="group inline-flex items-center justify-center rounded-2xl bg-white text-origen-ink px-8 py-4 text-sm sm:text-base font-medium transition hover:translate-y-[-1px] hover:bg-white/90"
                     >
                       Ver Colección Nova
                       <span className="ml-2 opacity-70 transition group-hover:opacity-100">→</span>
@@ -91,13 +83,12 @@ export default function Home() {
 
                     <a
                       href="/fabrica"
-                      className="inline-flex items-center justify-center rounded-2xl border border-origen-ink/15 bg-white/65 px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-medium text-origen-ink shadow-sm transition hover:bg-white/85 hover:translate-y-[-1px] focus:outline-none focus:ring-2 focus:ring-origen-ink/15"
+                      className="inline-flex items-center justify-center rounded-2xl border border-white/40 bg-white/10 backdrop-blur px-8 py-4 text-sm sm:text-base font-medium text-white transition hover:bg-white/20 hover:translate-y-[-1px]"
                     >
                       Nuestra fábrica
                     </a>
                   </div>
 
-                  {/* ✅ Eliminado el texto pequeño del final */}
                 </div>
               </div>
             </div>
@@ -112,12 +103,15 @@ export default function Home() {
               aria-label={`Ir a imagen ${i + 1}`}
               onClick={() => setCurrentSlide(i)}
               className={`h-1.5 w-6 rounded-full transition ${
-                i === currentSlide ? "bg-origen-ink/60" : "bg-origen-ink/20 hover:bg-origen-ink/35"
+                i === currentSlide
+                  ? "bg-white/70"
+                  : "bg-white/30 hover:bg-white/50"
               }`}
             />
           ))}
         </div>
       </section>
+
 
       {/* PIEZA DESTACADA */}
       <section className="relative py-16 sm:py-24 px-4 sm:px-6 bg-origen-sand">

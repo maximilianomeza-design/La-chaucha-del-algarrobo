@@ -38,7 +38,7 @@ export default function Home() {
             />
 
             {/* Overlay institucional limpio */}
-            <div className="absolute inset-0 bg-black/25" />
+            <div className="absolute inset-0 bg-black/22" />
 
             {/* CONTENIDO */}
             <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
@@ -62,7 +62,7 @@ export default function Home() {
                   </h1>
 
                   {/* Subtítulo */}
-                  <h2 className="mt-4 mx-auto max-w-3xl font-serif text-2xl sm:text-3xl md:text-4xl text-white/85 leading-[1.15]">
+                  <h2 className="mt-6 mx-auto max-w-3xl font-serif text-xl sm:text-2xl md:text-3xl text-white/85 leading-[1.15]">
                     La esencia del monte, decorando tu casa.
                   </h2>
 

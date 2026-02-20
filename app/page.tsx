@@ -46,13 +46,13 @@ export default function Home() {
 
                 {/* Marca */}
                 <div className="mb-6 sm:mb-8">
-                  <p className="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-white/80">
-                    Origen Algarrobo
-                  </p>
-                  <p className="mt-1 text-[11px] sm:text-xs tracking-[0.22em] uppercase text-white/60">
-                    by La Chaucha
-                  </p>
-                </div>
+  <p className="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-white/95 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
+    Origen Algarrobo
+  </p>
+  <p className="mt-1 text-[11px] sm:text-xs tracking-[0.22em] uppercase text-white/80 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
+    by La Chaucha
+  </p>
+</div>
 
                 {/* H1 */}
                 <h1 className="mx-auto font-serif text-4xl sm:text-5xl md:text-5xl tracking-[-0.02em] leading-[1.05] drop-shadow-[0_6px_14px_rgba(0,0,0,0.35)]">

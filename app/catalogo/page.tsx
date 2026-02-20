@@ -2,7 +2,7 @@ export default function Catalogo() {
   const productos = [
     {
       nombre: "Mesa cuadrada 1.40x1.40 base central",
-      imagen: "/assets/mesa-cuadrada-1.40x1.40-base-central.webp",
+      imagen: "/assets/catalogo/mesas/lineanova/mesa_con_base_edit.webp",
       categoria: "Comedor",
       link: "/catalogo/mesa-cuadrada",
     },

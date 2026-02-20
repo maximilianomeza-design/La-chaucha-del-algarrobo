@@ -20,8 +20,8 @@ export default function Home() {
 
   return (
     <main className="relative overflow-hidden bg-origen-sand text-origen-ink">
-
-      {/* HERO DESLIZANTE */}
+      
+      {/* HERO */}
       <section className="relative h-[78vh] sm:h-[66vh] w-full overflow-hidden">
         {heroImages.map((image, index) => (
           <div
@@ -37,65 +37,54 @@ export default function Home() {
               loading={index === 0 ? "eager" : "lazy"}
             />
 
-            {/* Overlay institucional optimizado */}
             <div className="absolute inset-0 bg-black/22" />
 
-            {/* CONTENIDO */}
             <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
-              <div className="relative w-full max-w-5xl text-center">
+              <div className="relative w-full max-w-5xl text-center text-white px-2 sm:px-4 py-8 sm:py-10">
 
-                <div className="px-2 sm:px-4 py-8 sm:py-10 text-white">
-
-                  {/* Marca */}
-                  <div className="mb-6 sm:mb-8">
-                    <p className="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-white/80">
-                      Origen Algarrobo
-                    </p>
-                    <p className="mt-1 text-[11px] sm:text-xs tracking-[0.22em] uppercase text-white/60">
-                      by La Chaucha
-                    </p>
-                  </div>
-
-                  {/* H1 */}
-                  <h1 className="mx-auto font-serif text-4xl sm:text-5xl md:text-5xl tracking-[-0.02em] leading-[1.05] drop-shadow-[0_6px_14px_rgba(0,0,0,0.35)]">
-                    Muebles de algarrobo
-                  </h1>
-
-                  {/* Subtítulo refinado */}
-                  <h2 className="mt-6 mx-auto max-w-3xl font-serif font-light text-xl sm:text-2xl md:text-3xl text-white/85 leading-[1.2]">
-                    La esencia del monte, decorando tu casa.
-                  </h2>
-
-                  {/* Copy institucional */}
-                  <p className="mt-6 mx-auto max-w-2xl text-base sm:text-lg text-white/80">
-                    Diseño cuidado. Producción propia. Madera real.
+                <div className="mb-6 sm:mb-8">
+                  <p className="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-white/80">
+                    Origen Algarrobo
                   </p>
-
-                  {/* CTAs */}
-                  <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                    <a
-                      href="/catalogo"
-                      className="group inline-flex items-center justify-center rounded-2xl bg-white text-origen-ink px-8 py-4 text-sm sm:text-base font-medium transition hover:translate-y-[-1px] hover:bg-white/90"
-                    >
-                      Ver Colección Nova
-                      <span className="ml-2 opacity-70 transition group-hover:opacity-100">→</span>
-                    </a>
-
-                    <a
-                      href="/fabrica"
-                      className="inline-flex items-center justify-center rounded-2xl border border-white/40 bg-white/10 backdrop-blur px-8 py-4 text-sm sm:text-base font-medium text-white transition hover:bg-white/20 hover:translate-y-[-1px]"
-                    >
-                      Nuestra fábrica
-                    </a>
-                  </div>
-
+                  <p className="mt-1 text-[11px] sm:text-xs tracking-[0.22em] uppercase text-white/60">
+                    by La Chaucha
+                  </p>
                 </div>
+
+                <h1 className="mx-auto font-serif text-4xl sm:text-5xl md:text-5xl tracking-[-0.02em] leading-[1.05] drop-shadow-[0_6px_14px_rgba(0,0,0,0.35)]">
+                  Muebles de algarrobo
+                </h1>
+
+                <h2 className="mt-6 mx-auto max-w-3xl font-serif font-light text-xl sm:text-2xl md:text-3xl text-white/85 leading-[1.2]">
+                  La esencia del monte, decorando tu casa.
+                </h2>
+
+                <p className="mt-6 mx-auto max-w-2xl text-base sm:text-lg text-white/80">
+                  Diseño cuidado. Producción propia. Madera real.
+                </p>
+
+                <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="/catalogo"
+                    className="group inline-flex items-center justify-center rounded-2xl bg-white text-origen-ink px-8 py-4 text-sm sm:text-base font-medium transition hover:translate-y-[-1px] hover:bg-white/90"
+                  >
+                    Ver Colección Nova
+                    <span className="ml-2 opacity-70 transition group-hover:opacity-100">→</span>
+                  </a>
+
+                  <a
+                    href="/fabrica"
+                    className="inline-flex items-center justify-center rounded-2xl border border-white/40 bg-white/10 backdrop-blur px-8 py-4 text-sm sm:text-base font-medium text-white transition hover:bg-white/20 hover:translate-y-[-1px]"
+                  >
+                    Nuestra fábrica
+                  </a>
+                </div>
+
               </div>
             </div>
           </div>
         ))}
 
-        {/* Indicadores */}
         <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-20">
           {heroImages.map((_, i) => (
             <button
@@ -112,4 +101,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TODO EL RESTO DEL ARCHIVO QUEDA EXACTAMENTE IGUAL DESDE AQUÍ */}
+      {/* PIEZA DESTACADA */}
+      <section className="relative py-16 sm:py-24 px-4 sm:px-6 bg-origen-sand">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-2xl sm:text-3xl font-serif text-origen-ink">
+            Pieza destacada
+          </h2>
+        </div>
+      </section>
+
+      {/* WHATSAPP */}
+      <a
+        href="https://wa.me/543734445112"
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 bg-origen-ink text-origen-sand p-3.5 sm:p-4 rounded-full shadow-lift hover:bg-origen-cocoa transition z-50 border border-white/10"
+        aria-label="Contactar por WhatsApp"
+      >
+        <FaWhatsapp size={24} />
+      </a>
+
+    </main>
+  );
+}

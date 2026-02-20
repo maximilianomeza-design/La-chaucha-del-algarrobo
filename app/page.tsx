@@ -130,7 +130,7 @@ export default function Home() {
           <div className="mt-10 relative overflow-hidden rounded-[28px] border border-origen-ink/10 bg-white shadow-soft">
             <div className="relative">
               <img
-                src="/assets/catalogo/cocina/linea-clasica/Alacena-y-bajomesada-1.60-clasica-sin-fondo.webp"
+                src="/assets/catalogo/dormitorio/placares-nova/placard_nova_1.50_edit.webp"
                 alt="Pieza destacada"
                 className="w-full h-[320px] sm:h-[520px] object-cover"
                 loading="lazy"

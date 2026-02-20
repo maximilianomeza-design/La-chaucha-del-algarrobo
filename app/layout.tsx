@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* FOOTER */}
         <footer className="bg-origen-dune border-t border-origen-ink/10 text-center py-12 mt-24 text-origen-ink">
           <img
-            src="/assets/logo-la-chaucha.webp"
+            src="/assets/logo_origen_algarrobo.JPG"
             alt="La Chaucha del Algarrobo"
             className="h-12 mx-auto mb-4 opacity-90"
             loading="lazy"

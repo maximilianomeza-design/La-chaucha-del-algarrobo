@@ -7,7 +7,7 @@ export default function MesaCuadrada() {
     {
       medida: "1.40 m x 1.40 m",
       precio: "AR$ 1.320.000",
-      imagen: "/assets/catalogo/mesas/lineanova/mesa-cuadrada-1.40x1.40-sola.webp",
+      imagen: "/assets/catalogo/mesas/lineanova/mesa_con_base_sola.webp",
     },
   ];
 
@@ -20,7 +20,7 @@ export default function MesaCuadrada() {
       {/* HERO con ambiente */}
       <section className="relative">
         <img
-          src="/assets/catalogo/mesas/lineanova/mesa-cuadrada-1.40x1.40-base-central-sinfondo.jpeg"
+          src="/assets/catalogo/mesas/lineanova/mesa_con_base_fondo_blanco.jpeg"
           alt="Mesa Cuadrada Línea Nova en ambiente comedor"
           className="w-full h-[85vh] object-cover"
         />

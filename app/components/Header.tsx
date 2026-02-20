@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Header() {
@@ -21,56 +22,38 @@ export default function Header() {
       }`}
     >
       <nav className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
-        {/* Marca */}
-        <Link href="/" className="flex items-center gap-3">
-          <img
-            src="/assets/logo-la-chaucha.webp"
+
+        {/* LOGO */}
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/assets/logo_origen_algarrobo.JPG"
             alt="Origen Algarrobo by La Chaucha"
-            className="h-9 w-auto"
+            width={180}
+            height={60}
+            priority
+            className="h-10 w-auto object-contain"
           />
-          <div className="leading-tight hidden sm:block">
-            <span className="block font-serif text-[#241A14] text-base">
-              Origen Algarrobo
-            </span>
-            <span className="block text-[11px] tracking-[0.22em] uppercase text-[#6A564A]">
-              by La Chaucha
-            </span>
-          </div>
         </Link>
 
-        {/* Navegación */}
-        <div className="flex gap-6 text-sm text-[#241A14]/90">
-          <Link
-            href="/"
-            className="hover:text-[#241A14] transition"
-          >
+        {/* NAVEGACIÓN */}
+        <div className="hidden md:flex gap-8 text-sm text-[#241A14]/90 font-medium">
+          <Link href="/" className="hover:text-[#241A14] transition">
             Inicio
           </Link>
-          <Link
-            href="/catalogo"
-            className="hover:text-[#241A14] transition"
-          >
+          <Link href="/catalogo" className="hover:text-[#241A14] transition">
             Catálogo
           </Link>
-          <Link
-            href="/fabrica"
-            className="hover:text-[#241A14] transition"
-          >
+          <Link href="/fabrica" className="hover:text-[#241A14] transition">
             La Fábrica
           </Link>
-          <Link
-            href="/sustentabilidad"
-            className="hover:text-[#241A14] transition"
-          >
+          <Link href="/sustentabilidad" className="hover:text-[#241A14] transition">
             Sustentabilidad
           </Link>
-          <Link
-            href="/contacto"
-            className="hover:text-[#241A14] transition"
-          >
+          <Link href="/contacto" className="hover:text-[#241A14] transition">
             Contacto
           </Link>
         </div>
+
       </nav>
     </header>
   );
